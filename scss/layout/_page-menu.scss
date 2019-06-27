@@ -62,7 +62,11 @@
   width: -moz-fit-content;
   width: fit-content;
   text-align: center;
-  margin-bottom: -100px;
+  margin-bottom: -80px;
+
+  @include respond-min(400){
+    margin-bottom: -100px;
+  }
 }
 
 .page-menu__list-item {
@@ -120,7 +124,11 @@
 
 .page-menu__lang{
   font-size: 30px;
-  margin: -70px 0 70px;
+  margin: -50px 0 50px;
+
+  @include respond-min(400){
+    margin: -70px 0 70px;
+  }
 }
 
 .page-menu__lang-item{
@@ -149,7 +157,15 @@
 
 
 @media screen and (max-width: 850px) and (max-height: 500px) and (orientation: landscape) {
-
+  .page-menu__shape{
+    display: none;
+  }
+  .page-menu__list-link{
+    line-height: 1.2;
+  }
+  .page-menu__lang {
+    margin: 0px 0 10px;
+  }
 }
 
 @media screen and (min-width: 992px) and (max-height: 740px) and (orientation: landscape) {
