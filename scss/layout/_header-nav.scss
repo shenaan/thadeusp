@@ -1,0 +1,107 @@
+.header-nav{
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(38, 43, 52, 0.92);
+  padding: 4.5rem 20px;
+  opacity: 0;
+  z-index: -1;
+  visibility: hidden;
+  @include transition-03();
+
+  &.is-active{
+    position: fixed;
+    opacity: 1;
+    visibility: visible;
+    z-index: 100;
+  }
+
+  @include respond-min(1025){
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: auto;
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+    background-color: transparent;
+    margin-left: auto;
+    padding: 0;
+  }
+}
+
+.header-nav__list{
+  font-size: 16px;
+  @include transition-03();
+}
+
+.header-nav__list-item{
+  display: block;
+  margin-bottom: 15px;
+  &:last-of-type{
+    margin-top: 20px;
+  }
+
+  @include respond-min(1025){
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 52px;
+    &:last-of-type{
+      margin-top: 0;
+    }
+  }
+}
+
+.header-nav__list-link{
+  display: block;
+  position: relative;
+  color: #fff;
+  font-weight: 700;
+  @include transition-03();
+  
+  &:after{
+    content: '';
+    display: none;
+    position: absolute;
+    bottom: -36px;
+    left: 0;
+    right: 0;
+    @include size(28px, 16px);
+    @include center();
+    //background: url("#{$imgUrl}nav-icon.svg")no-repeat center /contain;
+    opacity: 0;
+    visibility: hidden;
+    @include transition-03();
+  }
+
+  @include respond-min(1025){
+    &:after{
+      display: block;
+    }
+  }
+
+  &:hover, &:focus, &:active{
+    @include respond-min(1025){
+      &:after{
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+.header-nav__login-link{
+  padding: 7px 36px;
+  font-size: 14px;
+  &:after{
+    display: none !important;
+  }
+}

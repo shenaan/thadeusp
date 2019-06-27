@@ -1,0 +1,19 @@
+.header-stock{
+  background-color: $greenColor;
+  color: $textColor;
+  text-transform: uppercase;
+  //font-family: $InputMono;
+  font-size: 12px;
+  font-weight: 200;
+  letter-spacing: 0.88px;
+  padding: 5px 0;
+  margin-top: 17px;
+  white-space: nowrap;
+  overflow: hidden;
+  @include respond-min(992){
+    margin-top: 24px;
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 1.28px;
+  }
+}

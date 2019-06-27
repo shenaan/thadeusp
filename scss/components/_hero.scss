@@ -1,0 +1,115 @@
+.section__hero{
+  position: relative;
+  &.is-active{
+
+  }
+}
+
+.hero__bg{
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(255,255,255,0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  @include square(100%);
+  z-index: 0;
+  @include transition-04();
+}
+
+.hero__active{
+  opacity: 0;
+}
+
+.hero__inner{
+  @include square(100%);
+  @include display-flex();
+  @include flex-direction-col();
+  @include ai-flex-center();
+  @include jc-flex-center();
+  position: relative;
+  padding-bottom: 200px;
+}
+
+.hero__inner-content--default{
+  margin-bottom: -200px;
+}
+
+.hero__title{
+  text-align: center;
+  width: 100%;
+  .h1{
+    font-size: 55px;
+    font-weight: 400;
+    line-height: 72px;
+  }
+
+  @include respond-min(992){
+    .h1{
+      font-size: 65px;
+      line-height: 85px;
+    }
+  }
+  @include respond-min(1200){
+    .h1{
+      font-size: 77px;
+      line-height: 101px;
+    }
+  }
+}
+
+.hero__shape{
+  width: 60px;
+  @include center();
+  position: absolute;
+  bottom: 55px;
+  left: 0;
+  right: 0;
+  img{
+    width: 100%;
+  }
+  @include respond-min(992){
+    bottom: 112px;
+  }
+}
+
+.hero__inner-content--active{
+  opacity: 0;
+  color: #fff;
+  position: absolute;
+  bottom: 55px;
+  left: 0;
+  right: 0;
+  text-transform: uppercase;
+  @include center();
+  margin-top: auto;
+  margin-bottom: 50px;
+  text-align: center;
+  width: 100%;
+  h4{
+    color: inherit;
+  }
+}
+
+.hero-scroll__link{
+  display: inline-block;
+  color: inherit;
+
+  &:hover, &:focus, &:active{
+    .hero-scroll__icon{
+      @include animation(move-on-hover, 0.7, 0, 2);
+    }
+  }
+}
+
+.hero-scroll__icon{
+  display: block;
+  @include size(17px, 8px);
+  background: url("#{$imgUrl}general/arrow-down.svg")no-repeat center /contain;
+  margin-bottom: 25px;
+  @include center();
+  stroke: #fff;
+  fill: none;
+}

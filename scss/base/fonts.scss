@@ -1,0 +1,29 @@
+@import "../abstracts/custom-variables";
+
+@font-face {
+  font-family: 'FormaDJRText-Regular';
+  src: url('#{$fontsUrl}FormaDJRText-Regular.eot');
+  src: url('#{$fontsUrl}FormaDJRText-Regular.eot?#iefix') format('embedded-opentype'),
+  url('#{$fontsUrl}FormaDJRText-Regular.woff2') format('woff2'),
+  url('#{$fontsUrl}FormaDJRText-Regular.woff') format('woff'),
+  url('#{$fontsUrl}FormaDJRText-Regular.ttf') format('truetype'),
+  url('#{$fontsUrl}FormaDJRText-Regular.svg#FormaDJRText-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'InputMono';
+  src: url('#{$fontsUrl}InputMono-Thin.eot');
+  src: url('#{$fontsUrl}InputMono-Thin.eot?#iefix') format('embedded-opentype'),
+  url('#{$fontsUrl}InputMono-Thin.woff2') format('woff2'),
+  url('#{$fontsUrl}InputMono-Thin.woff') format('woff'),
+  url('#{$fontsUrl}InputMono-Thin.ttf') format('truetype'),
+  url('#{$fontsUrl}InputMono-Thin.svg#InputMono-Thin') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
+
+
+
+
