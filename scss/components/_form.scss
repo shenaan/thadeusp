@@ -1,0 +1,58 @@
+.form__input-wrap{
+  margin-bottom: 30px;
+}
+
+.form__input{
+  width: 100%;
+  display: inline-block;
+  border: none !important;
+  border-bottom: 1px solid #fff !important;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1.12px;
+  line-height: 25px;
+
+  @include input-placeholder(){
+    color: inherit;
+    font-size: inherit;
+  }
+
+  @include respond-min(992){
+    font-size: 18px;
+    letter-spacing: 1.44px;
+    line-height: 25px;
+  }
+}
+
+.form__submit-btn{
+  font-family: $InputMono;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1.12px;
+  line-height: 20px;
+  color: $greenColor;
+  border: none !important;
+  background: transparent;
+  &:after {
+    content: '';
+    display: block;
+    background-color: $greenColor;
+    height: 1px;
+    width: calc(100% + 5px);
+    @include transition-04();
+    @include transform-origin(center);
+  }
+
+  &:hover, &:focus, &:active {
+    &:after {
+      @include transform-scale(0, 1);
+    }
+  }
+
+  @include respond-min(992){
+    font-size: 16px;
+    letter-spacing: 1.28px;
+    line-height: 24px;
+  }
+}

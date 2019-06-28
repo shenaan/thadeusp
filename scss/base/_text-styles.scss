@@ -1,10 +1,10 @@
 h1, .h1 {
-  font-size: 40px;
+  font-size: 35px;
   //font-family: $IvyMode;
   font-weight: 400;
-  line-height: 45px;
+  line-height: 35px;
   text-transform: uppercase;
-  @include respond-min(1200) {
+  @include respond-min(992) {
     font-size: 55px;
     line-height: 62px;
   }
@@ -16,7 +16,7 @@ h2, .h2 {
   font-weight: 400;
   line-height: 41px;
   text-transform: uppercase;
-  @include respond-min(1200) {
+  @include respond-min(992) {
     font-size: 32px;
     line-height: 52px;
   }
@@ -26,15 +26,17 @@ h3, .h3 {
   font-family: $Forma;
   font-size: 20px;
   font-weight: 400;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
   line-height: 23px;
   text-transform: uppercase;
 
   @include respond-min(992) {
-  }
-  @include respond-min(1200) {
     font-size: 25px;
     line-height: 28px;
+    letter-spacing: 1.5px;
+  }
+  @include respond-min(1200) {
+
   }
 }
 
@@ -56,11 +58,12 @@ h4, .h4 {
 
 p {
   //font-family: $IvyJournal;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 22px;
 
-  @include respond-min(1200) {
-
+  @include respond-min(992) {
+    font-size: 16px;
+    line-height: 24px;
   }
 }

@@ -46,7 +46,7 @@
   }
 }
 
-.page-menu__inner{
+.page-menu__inner {
   @include square(100%);
   padding: 50px 50px 200px;
   @include display-flex();
@@ -64,7 +64,7 @@
   text-align: center;
   margin-bottom: -80px;
 
-  @include respond-min(400){
+  @include respond-min(400) {
     margin-bottom: -100px;
   }
 }
@@ -73,7 +73,7 @@
   position: relative;
 
   &:hover, &:focus, &:active {
-    .page-menu__list-link{
+    .page-menu__list-link {
       color: #fff;
     }
   }
@@ -95,7 +95,7 @@
   }
 }
 
-.page-menu__list-link--lg{
+.page-menu__list-link--lg {
   //font-family: $IvyMode;
   font-size: 38px;
   font-weight: 400;
@@ -106,7 +106,7 @@
   }
 }
 
-.page-menu__shape{
+.page-menu__shape {
   width: 60px;
   @include center();
   position: absolute;
@@ -114,31 +114,31 @@
   left: 0;
   right: 0;
 
-  img{
+  img {
     width: 100%;
   }
-  @include respond-min(992){
+  @include respond-min(992) {
     bottom: 112px;
   }
 }
 
-.page-menu__lang{
+.page-menu__lang {
   font-size: 30px;
   margin: -50px 0 50px;
 
-  @include respond-min(400){
+  @include respond-min(400) {
     margin: -70px 0 70px;
   }
 }
 
-.page-menu__lang-item{
+.page-menu__lang-item {
   display: inline-block;
   color: rgba(29, 30, 28, 0.3);
   font-size: 30px;
   letter-spacing: 1.8px;
   text-transform: uppercase;
-  &:last-of-type{
-    &:before{
+  &:last-of-type {
+    &:before {
       content: '/';
       display: inline-block;
       font-size: inherit;
@@ -146,21 +146,20 @@
       margin: 0 2px;
     }
   }
-  &.is-active{
+  &.is-active {
     color: $textColor;
   }
 
-  &:hover, &:focus, &:active{
+  &:hover, &:focus, &:active {
     color: $textColor;
   }
 }
 
-
 @media screen and (max-width: 850px) and (max-height: 500px) and (orientation: landscape) {
-  .page-menu__shape{
+  .page-menu__shape {
     display: none;
   }
-  .page-menu__list-link{
+  .page-menu__list-link {
     line-height: 1.2;
   }
   .page-menu__lang {
@@ -169,7 +168,7 @@
 }
 
 @media screen and (min-width: 992px) and (max-height: 740px) and (orientation: landscape) {
-  .page-menu__shape{
+  .page-menu__shape {
     display: none;
   }
 }

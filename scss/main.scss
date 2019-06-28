@@ -15,7 +15,6 @@
 @import "layout/grids";
 @import "layout/general-layout-styles";
 @import "layout/page-menu";
-@import "layout/header-nav";
 @import "layout/page-section";
 @import "layout/header";
 @import "layout/footer";
@@ -25,10 +24,17 @@
 @import "components/fullpageJs-overwrite";
 @import "components/carousel";
 @import "components/buttons";
+@import "components/form";
 @import "components/video-bg";
 
 @import "components/header-stock";
+@import "components/homepage-links";
+@import "components/homepage-scroll-link";
+@import "components/arrows-down";
 @import "components/hero";
+@import "components/homepage";
+@import "components/homepage-follow";
+@import "components/homepage-contact";
 
 
 

@@ -17,36 +17,36 @@
   }
 }
 
-.header__inner{
+.header__inner {
   @include display-flex();
   @include ai-flex-center();
 }
 
-.header__logo{
+.header__logo {
   @include size(145px, 25px);
-  @include respond-min(992){
+  @include respond-min(992) {
     @include size(242px, 40px);
   }
 }
 
-.header__inner--right{
+.header__inner--right {
   margin-left: auto;
   @include display-flex();
   @include ai-flex-center();
 }
 
-.header__lang{
+.header__lang {
   font-size: 30px;
 }
 
-.header__lang-item{
+.header__lang-item {
   display: inline-block;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255, 255, 255, 0.3);
   font-size: 30px;
   letter-spacing: 1.8px;
   text-transform: uppercase;
-  &:last-of-type{
-    &:before{
+  &:last-of-type {
+    &:before {
       content: '/';
       display: inline-block;
       font-size: inherit;
@@ -54,20 +54,20 @@
       margin: 0 2px;
     }
   }
-  &.is-active{
+  &.is-active {
     color: #fff;
   }
 
-  &:hover, &:focus, &:active{
+  &:hover, &:focus, &:active {
     color: #fff;
   }
 }
 
-.header__message-link{
+.header__message-link {
   display: block;
   @include size(27px, 27px);
   margin: 0 19px;
-  svg{
+  svg {
     display: inline-block;
     @include square(inherit);
     fill: #fff;
@@ -79,18 +79,18 @@
     transform: perspective(1px) translate3d(0, 0, 0);
   }
 
-  &:hover, &:focus, &:active{
-    svg{
-      @include transform-scale(1.03,1.03);
+  &:hover, &:focus, &:active {
+    svg {
+      @include transform-scale(1.03, 1.03);
     }
   }
-  @include respond-min(992){
+  @include respond-min(992) {
     @include size(34px, 35px);
     margin: 0 31px;
   }
 }
 
-.header__menu-btn{
+.header__menu-btn {
   font-size: 44px;
   font-weight: 400;
   letter-spacing: 2.64px;
@@ -99,6 +99,7 @@
   background-color: transparent !important;
   color: #fff;
 }
+
 /*hamburger*/
 
 .hamburger {
@@ -118,19 +119,19 @@
       transition-delay: 0.2s;
       background-color: #fff;
       &:nth-child(1) {
-        -webkit-transform: translateY(10px) rotate(45deg);
-        -ms-transform: translateY(10px) rotate(45deg);
-        -o-transform: translateY(10px) rotate(45deg);
-        transform: translateY(10px) rotate(45deg);
+        -webkit-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+        -o-transform: translateY(10px);
+        transform: translateY(10px);
       }
       &:nth-child(2) {
         opacity: 0;
       }
       &:nth-child(3) {
-        -webkit-transform: translateY(-9px) rotate(-45deg);
-        -ms-transform: translateY(-9px) rotate(-45deg);
-        -o-transform: translateY(-9px) rotate(-45deg);
-        transform: translateY(-9px) rotate(-45deg);
+        -webkit-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+        -o-transform: translateY(-10px);
+        transform: translateY(-10px);
       }
     }
   }
