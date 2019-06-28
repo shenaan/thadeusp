@@ -325,3 +325,11 @@
 @mixin transition-04() {
   @include transition(0.4s all ease-in-out);
 }
+
+@mixin transition-custom(){
+  @include transition(all 800ms cubic-bezier(0.19, 1, 0.22, 1));
+}
+
+@mixin transition-homepage(){
+  @include transition(all 1000ms cubic-bezier(0.19, 1, 0.22, 1));
+}

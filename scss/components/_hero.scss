@@ -14,6 +14,10 @@
   }
 }
 
+.section__hero-default {
+  cursor: pointer;
+}
+
 .hero__bg {
   -webkit-background-size: cover;
   background-size: cover;
@@ -25,11 +29,11 @@
   left: 0;
   @include square(100%);
   z-index: 0;
-  @include transition-04();
+  @include transition-homepage();
 }
 
 .hero__active {
-  opacity: 0;
+  z-index: -1;
 }
 
 .hero__inner {
@@ -44,6 +48,7 @@
 
 .hero__inner-content--default {
   margin-bottom: -200px;
+  @include transition-homepage();
 }
 
 .hero__title {
@@ -97,6 +102,9 @@
   margin-bottom: 50px;
   text-align: center;
   width: 100%;
+  z-index: -1;
+  @include transform-scale(0.8, 1);
+
   h4 {
     color: inherit;
   }
@@ -105,6 +113,9 @@
 .hero-scroll__link {
   display: inline-block;
   color: inherit;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
 
   &:hover, &:focus, &:active {
     .hero-scroll__icon {

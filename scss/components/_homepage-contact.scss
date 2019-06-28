@@ -1,71 +1,71 @@
-.homepage-contact{
+.homepage-contact {
   @include display-flex();
   @include flex-direction-col();
 }
 
-.homepage-contact__info{
+.homepage-contact__info {
   background-color: $textColor;
   padding: 100px 0;
   position: relative;
   @include flex(1 0 auto);
 
-  @include respond-min(992){
+  @include respond-min(992) {
     padding: 150px 0;
-    .main-container{
+    .main-container {
       height: 100%;
     }
-    .homepage__link-wrap{
+    .homepage__link-wrap {
       position: relative;
       bottom: auto;
     }
   }
 }
 
-.homepage-contact__info-inner{
+.homepage-contact__info-inner {
   @include display-flex();
   @include flex-wrap();
   position: relative;
 
-
-  @include respond-min(992){
+  @include respond-min(992) {
     @include flex-nowrap();
     @include ai-flex-center();
     height: 100%;
   }
 }
 
-.homepage-contact__info-item{
+.homepage-contact__info-item {
   width: 100%;
   max-width: 100%;
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 50px;
 
-  @include respond-min(992){
+  @include respond-min(992) {
     width: 33.33%;
     max-width: 33.33%;
     margin-bottom: 0;
+    height: 150px;
   }
 }
 
-.homepage-contact__info-icon{
+.homepage-contact__info-icon {
   @include display-flex();
   @include ai-flex-center();
   margin-bottom: 20px;
   height: 34px;
-  svg{
+  svg {
     fill: #fff;
     display: block;
     width: 29px;
     @include center();
   }
 
-  @include respond-min(992){
+  @include respond-min(992) {
     margin-bottom: 40px;
   }
 }
 
-.homepage-contact__info-text{
+.homepage-contact__info-text {
   font-family: $Forma;
   display: block;
   color: #fff;
@@ -74,52 +74,51 @@
   letter-spacing: 1.08px;
   line-height: 23px;
 
-  @include respond-min(992){
+  @include respond-min(992) {
     font-size: 22px;
     letter-spacing: 1.32px;
     line-height: 27px;
   }
 }
 
-
 /*------Mail subscribe-------*/
-.homepage-contact__mail{
+.homepage-contact__mail {
   padding: 70px 0;
 
-  @include respond-min(992){
+  @include respond-min(992) {
     padding: 35px 0;
   }
 }
 
-.homepage-contact__mail-inner{
+.homepage-contact__mail-inner {
   @include display-flex();
   @include flex-wrap();
 
-  @include respond-min(992){
+  @include respond-min(992) {
     @include flex-nowrap();
   }
 }
 
-.homepage-contact__mail-item{
+.homepage-contact__mail-item {
   width: 100%;
   max-width: 100%;
 
-  @include respond-min(992){
+  @include respond-min(992) {
     width: 50%;
     max-width: 50%;
   }
 }
 
-.homepage-contact__label{
+.homepage-contact__label {
   margin-bottom: 50px;
-  p{
+  p {
     max-width: 195px;
     text-align: center;
     @include center();
   }
-  @include respond-min(992){
+  @include respond-min(992) {
     margin-bottom: 0;
-    p{
+    p {
       max-width: 285px;
       text-align: left;
       margin-left: 0;
@@ -127,34 +126,34 @@
   }
 }
 
-.homepage-contact__mail-form{
+.homepage-contact__mail-form {
   margin-top: auto;
   margin-bottom: 2px;
 }
 
-.homepage-contact__form-row{
+.homepage-contact__form-row {
   @include display-flex();
   @include flex-wrap();
 
-  @include respond-min(992){
+  @include respond-min(992) {
     @include flex-nowrap();
   }
 }
 
-.homepage-contact__form-input-wrap{
+.homepage-contact__form-input-wrap {
   width: 100%;
   max-width: 100%;
   margin-bottom: 50px;
-  input{
+  input {
     color: rgba(29, 30, 28, 0.2);
     border-bottom: 1px solid $textColor !important;
   }
 
-  @include respond-min(992){
+  @include respond-min(992) {
     width: calc(100% - 90px);
     max-width: calc(100% - 90px);
     margin-bottom: 0;
-    input{
+    input {
       font-size: 16px;
       letter-spacing: 1.28px;
       line-height: 23px;
@@ -162,10 +161,10 @@
   }
 }
 
-.homepage-form__submit-wrap{
+.homepage-form__submit-wrap {
   margin-left: auto;
   margin-right: auto;
-  @include respond-min(992){
+  @include respond-min(992) {
     margin-top: auto;
     margin-right: 0;
   }

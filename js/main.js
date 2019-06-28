@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    var controller = new ScrollMagic.Controller();
 
     function isMobile() {
         if ($('.is-mobile').css('display') === 'block') {
@@ -8,8 +9,17 @@ $(document).ready(function () {
         }
     }
 
-    //reseting header
+    controller.scrollTo(function (target) {
+        TweenMax.to(window, 0.7, {
+            scrollTo: {
+                y: target,
+                autoKill: true
+            },
+            ease: Power2.easeOut
+        });
+    });
 
+    //reseting header
     function headerReset() {
         $('.page-menu').removeClass('is-active');
         $('.hamburger').removeClass('is-active');
@@ -44,14 +54,14 @@ $(document).ready(function () {
         arrows: false,
         infinite: true,
         slidesToShow: 2,
-        slidesToScroll: 1,
+        slidesToScroll: 2,
         mobileFirst: true,
         responsive: [
             {
                 breakpoint: 769,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 1
+                    slidesToScroll: 2
                 }
             },
             {
@@ -63,6 +73,57 @@ $(document).ready(function () {
             }
         ]
     });
+
+    function homepageLoadAnimation(){
+        var tl = new TimelineMax({
+            repeat: 0,
+            ease: Back.easeOut.config(1.7)
+        }),
+            imgDefault = $('.hero__default'),
+            imgActive = $('.hero__active'),
+            contentDefault = $('.hero__inner-content--default'),
+            contentActive = $('.hero__inner-content--active');
+
+        tl.staggerTo(imgDefault, 1, {opacity: 0, zIndex: '-1'}, 1, "hero-img")
+            .staggerTo(imgActive, 0, {zIndex: '1'}, 1, "hero-img")
+            .staggerFromTo(contentDefault, 0.5, {opacity: 1, zIndex: '1'}, {opacity: 0, zIndex: '-1'}, 0.4, '-=0.4')
+            .to(contentActive, 1, {delay: 0.3, opacity: 1, zIndex: '1', scaleX: 1})
+    }
+
+    //homepage load
+
+    $(document).on('click', '.section__hero-default', function () {
+        $('.section__hero').removeClass('section__hero-default');
+        homepageLoadAnimation();
+        $('body, html').removeClass('no-scroll');
+    });
+
+    //homepage modal
+
+    $('.homepage-mail__form').on('submit', function (e) {
+        e.preventDefault();
+
+        $('body, html').addClass('no-scroll-initial');
+        $('.modal-success').addClass('is-active');
+    });
+
+    $('.modal__close-btn').on('click', function (e) {
+        $('body, html').removeClass('no-scroll-initial');
+        $(this).parents('.modal__wrap').removeClass('is-active');
+        $('.homepage-mail__form input').val('');
+    });
+
+    //homepage scroll btn
+
+    $('.homepage-scroll__btn').on('click', function (e) {
+        e.preventDefault();
+
+        var $this = $(this),
+            href = $this.attr('href');
+
+        controller.scrollTo(href);
+    });
+
 
     $(window).resize(function () {
         headerReset();
