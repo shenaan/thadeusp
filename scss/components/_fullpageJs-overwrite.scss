@@ -1,27 +1,24 @@
-.footer.section.fp-section{
-  height: auto !important;
+//.footer.section.fp-section {
+//  height: auto !important;
+//
+//  .fp-tableCell {
+//    height: auto !important;
+//  }
+//}
 
-  .fp-tableCell{
+.homepage.fullpage {
+  @include respond-max(992) {
     height: auto !important;
-  }
-}
-
-.counter-section.fp-section{
-  height: auto !important;
-
-  .fp-tableCell{
-    height: auto !important;
-  }
-}
-
-.about-page.fullpage{
-  @include respond-max(992){
     @include display-flex();
     @include flex-direction-col();
 
-    .section{
-    height: auto !important;
-    min-height: 100vh !important;
+    .section {
+      height: auto !important;
+      min-height: 100vh !important;
+      &.section__hero{
+        height: 100vh !important;
+        min-height: 640px !important;
+      }
     }
   }
 }
