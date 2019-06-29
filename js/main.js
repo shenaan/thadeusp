@@ -47,6 +47,16 @@ $(document).ready(function () {
 
     $('.page-nav__list-link').on('click', headerReset);
 
+    //modal open
+    $('.modal__open-link').on('click', function (e) {
+        e.preventDefault();
+
+        var $this = $(this),
+            href = $this.attr('href');
+
+        $('body').find('.modal__wrap' + href).addClass('is-active');
+        $('body, html').addClass('no-scroll-initial');
+    });
 
     //homepage instagram slider
     $('.homepage-follow__slider').slick({
@@ -105,12 +115,12 @@ $(document).ready(function () {
 
         $('body, html').addClass('no-scroll-initial');
         $('.modal-success').addClass('is-active');
+        $('.homepage-mail__form input').val('');
     });
 
     $('.modal__close-btn').on('click', function (e) {
         $('body, html').removeClass('no-scroll-initial');
         $(this).parents('.modal__wrap').removeClass('is-active');
-        $('.homepage-mail__form input').val('');
     });
 
     //homepage scroll btn
