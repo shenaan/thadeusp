@@ -40,14 +40,14 @@
     right: -35px;
     left: 0;
     &:after {
-      background-image: url("#{$imgUrl}general/arrow-left-pink.svg");
+      //background-image: url("#{$imgUrl}general/arrow-left-pink.svg");
     }
   }
   &.slick-prev {
     right: 0;
     left: -35px;
     &:after {
-      background-image: url("#{$imgUrl}general/arrow-right-pink.svg");
+      //background-image: url("#{$imgUrl}general/arrow-right-pink.svg");
     }
   }
 
