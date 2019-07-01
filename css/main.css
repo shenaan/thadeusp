@@ -2087,14 +2087,17 @@ body {
   align-items: center; }
 
 .header__lang {
-  font-size: 30px; }
+  font-size: 30px;
+  line-height: 30px; }
 
 .header__lang-item {
   display: inline-block;
   color: rgba(255, 255, 255, 0.3);
   font-size: 30px;
   letter-spacing: 1.8px;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  vertical-align: top;
+  padding-top: 7px; }
   .header__lang-item:last-of-type:before {
     content: '/';
     display: inline-block;

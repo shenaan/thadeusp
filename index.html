@@ -55,16 +55,17 @@
     </div>
     <div class="header-stock">
         <div class="header-stock__slider">
+            <!-- timezone info: https://github.com/moment/moment-timezone/blob/develop/data/packed/latest.json-->
             <div class="header-stock__item">
                 <div class="header-stock__item-inner">
                     MACAU <span class="header-stock__item-phone">+86</span>
-                    <span class="header-stock__item-time macau">22:06</span>
+                    <span class="header-stock__item-time" data-timezone="Asia/Macau">22:06</span>
                 </div>
             </div>
             <div class="header-stock__item">
                 <div class="header-stock__item-inner">
                     LONDON UK <span class="header-stock__item-phone">+44</span>
-                    <span class="header-stock__item-time uk">14:06</span>
+                    <span class="header-stock__item-time" data-timezone="Europe/London">14:06</span>
                 </div>
             </div>
             <div class="header-stock__item">
@@ -73,19 +74,19 @@
             <div class="header-stock__item">
                 <div class="header-stock__item-inner">
                     HONG KONG <span class="header-stock__item-phone">+852</span>
-                    <span class="header-stock__item-time hong-kong">22:06</span>
+                    <span class="header-stock__item-time" data-timezone="Asia/Hong_Kong">22:06</span>
                 </div>
             </div>
             <div class="header-stock__item">
                 <div class="header-stock__item-inner">
                     MACAU <span class="header-stock__item-phone">+86</span>
-                    <span class="header-stock__item-time macau">22:06</span>
+                    <span class="header-stock__item-time" data-timezone="Asia/Macau">22:06</span>
                 </div>
             </div>
             <div class="header-stock__item">
                 <div class="header-stock__item-inner">
                     LONDON UK <span class="header-stock__item-phone">+44</span>
-                    <span class="header-stock__item-time uk">14:06</span>
+                    <span class="header-stock__item-time" data-timezone="Europe/London">14:06</span>
                 </div>
             </div>
             <div class="header-stock__item">
@@ -94,19 +95,19 @@
             <div class="header-stock__item">
                 <div class="header-stock__item-inner">
                     HONG KONG <span class="header-stock__item-phone">+852</span>
-                    <span class="header-stock__item-time hong-kong">22:06</span>
+                    <span class="header-stock__item-time" data-timezone="Asia/Hong_Kong">22:06</span>
                 </div>
             </div>
             <div class="header-stock__item">
                 <div class="header-stock__item-inner">
                     MACAU <span class="header-stock__item-phone">+86</span>
-                    <span class="header-stock__item-time macau">22:06</span>
+                    <span class="header-stock__item-time" data-timezone="Asia/Macau">22:06</span>
                 </div>
             </div>
             <div class="header-stock__item">
                 <div class="header-stock__item-inner">
                     LONDON UK <span class="header-stock__item-phone">+44</span>
-                    <span class="header-stock__item-time uk">14:06</span>
+                    <span class="header-stock__item-time" data-timezone="Europe/London">14:06</span>
                 </div>
             </div>
             <div class="header-stock__item">
@@ -115,7 +116,7 @@
             <div class="header-stock__item">
                 <div class="header-stock__item-inner">
                     HONG KONG <span class="header-stock__item-phone">+852</span>
-                    <span class="header-stock__item-time hong-kong">22:06</span>
+                    <span class="header-stock__item-time" data-timezone="Asia/Hong_Kong">22:06</span>
                 </div>
             </div>
         </div>
@@ -542,6 +543,8 @@
 <script src="js/vendor/lazyload.min.js"></script>
 <script src="js/vendor/scrolloverflow.min.js"></script>
 <script src="js/vendor/fullpage.min.js"></script>
+<script src="js/vendor/moment.min.js"></script>
+<script src="js/vendor/moment-timezone-with-data-10-year-range.min.js"></script>
 <script src="js/main.js"></script>
 <script src="js/home.js"></script>
 

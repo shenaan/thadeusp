@@ -60,6 +60,23 @@ $(document).ready(function () {
         centerMode: false
     });
 
+
+    function printTime() {
+        // timezone info: https://github.com/moment/moment-timezone/blob/develop/data/packed/latest.json
+
+        var now = moment().format("hh:mm"); // Your Current Time.
+
+        var target = $('.header-stock__item-time');
+
+        target.each(function (i, el) {
+            var $this = $(this),
+                tz = $(this).attr('data-timezone');
+
+            $this.text(moment().tz(tz).format('HH:mm'));
+        });
+    }
+    setInterval(printTime, 1000);
+
     // menu image replacement
 
     $('.page-nav__list-link').on('click', headerReset);
@@ -75,6 +92,7 @@ $(document).ready(function () {
         $('body, html').addClass('no-scroll-initial');
     });
 
+    printTime();
     $(window).resize(function () {
         headerReset();
     });
