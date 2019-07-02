@@ -2493,7 +2493,8 @@ img[data-srcset] {
   letter-spacing: 1.12px;
   line-height: 25px;
   background: transparent;
-  color: rgba(255, 255, 255, 0.2); }
+  color: rgba(255, 255, 255, 0.2);
+  border-radius: 0; }
   .form__input.placeholder {
     color: rgba(255, 255, 255, 0.2);
     font-size: inherit; }
@@ -2996,6 +2997,7 @@ img[data-srcset] {
 .hero__inner {
   width: 100%;
   height: 100%;
+  max-height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3319,6 +3321,21 @@ img[data-srcset] {
   .homepage-contact__form-input-wrap input {
     color: rgba(29, 30, 28, 0.2);
     border-bottom: 1px solid #1d1e1c !important; }
+    .homepage-contact__form-input-wrap input.placeholder {
+      color: rgba(29, 30, 28, 0.2);
+      font-size: inherit; }
+    .homepage-contact__form-input-wrap input:-moz-placeholder {
+      color: rgba(29, 30, 28, 0.2);
+      font-size: inherit; }
+    .homepage-contact__form-input-wrap input::-moz-placeholder {
+      color: rgba(29, 30, 28, 0.2);
+      font-size: inherit; }
+    .homepage-contact__form-input-wrap input:-ms-input-placeholder {
+      color: rgba(29, 30, 28, 0.2);
+      font-size: inherit; }
+    .homepage-contact__form-input-wrap input::-webkit-input-placeholder {
+      color: rgba(29, 30, 28, 0.2);
+      font-size: inherit; }
   @media screen and (min-width: 992px) {
     .homepage-contact__form-input-wrap {
       width: calc(100% - 90px);

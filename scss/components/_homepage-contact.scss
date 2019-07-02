@@ -147,6 +147,10 @@
   input {
     color: rgba(29, 30, 28, 0.2);
     border-bottom: 1px solid $textColor !important;
+    @include input-placeholder(){
+      color: rgba(29, 30, 28, 0.2);
+      font-size: inherit;
+    }
   }
 
   @include respond-min(992) {
