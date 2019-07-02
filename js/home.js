@@ -19,33 +19,6 @@ $(document).ready(function () {
         });
     });
 
-    // $('#fullpage').fullpage({
-    //     licenseKey: 'B80EC24D-66D9477B-B16E7559-B4301A50',
-    //     scrollingSpeed: 900,
-    //     scrollHorizontally: false,
-    //     scrollOverflow: false,  //
-    //     autoScrolling: false,
-    //     fitToSection: true,
-    //     fixedElements: '.header',
-    //     css3: true,
-    //     scrollBar: true,
-    //     verticalCentered: false
-    // });
-    //
-    // function handleFullPage() {
-    //     if (isMobile()) {
-    //         $.fn.fullpage.setResponsive(true);
-    //     } else {
-    //         $.fn.fullpage.setResponsive(false);
-    //     }
-    // }
-    //
-    // function handleFullPageScrolling(){
-    //     if(!isMobile()){
-    //         $.fn.fullpage.setAutoScrolling(true);
-    //     }
-    // }
-
     //homepage instagram slider
     $('.homepage-follow__slider').slick({
         dots: false,
@@ -95,8 +68,9 @@ $(document).ready(function () {
         $('.section__hero').removeClass('section__hero-default');
         setTimeout(function () {
             homepageLoadAnimation();
-            $('body, html').removeClass('no-scroll');
+            $('body, html').removeClass('no-scroll is-loading');
             $('body').addClass('has-loaded');
+            $.fn.fullpage.setAllowScrolling(true);
             if(!isMobile()){
                 $.fn.fullpage.setAutoScrolling(true);
             }

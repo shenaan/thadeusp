@@ -98,10 +98,15 @@
     padding-left: 23px;
     display: inline-block;
     color: #fff;
-    font-family: $IvyMode;
+    font-family: $IvyJournal;
     font-size: 10px;
     font-weight: 400;
     line-height: 16px;
+
+    a{
+      text-decoration: underline;
+      color: inherit;
+    }
 
     .checkmark {
       position: absolute;

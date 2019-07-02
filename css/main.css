@@ -1957,7 +1957,8 @@ body {
   font-weight: 400;
   letter-spacing: 1.86px;
   line-height: 62px;
-  color: #1d1e1c; }
+  color: #1d1e1c;
+  text-transform: uppercase; }
   @media screen and (min-width: 992px) {
     .page-menu__list-link {
       font-size: 44px;
@@ -1965,6 +1966,7 @@ body {
       line-height: 81px; } }
 
 .page-menu__list-link--lg {
+  font-family: "ivymode", sans-serif;
   font-size: 38px;
   font-weight: 400;
   line-height: 62px; }
@@ -2590,10 +2592,13 @@ img[data-srcset] {
     padding-left: 23px;
     display: inline-block;
     color: #fff;
-    font-family: "ivymode", sans-serif;
+    font-family: "ivyjournal", sans-serif;
     font-size: 10px;
     font-weight: 400;
     line-height: 16px; }
+    .form__checkbox-wrap label a {
+      text-decoration: underline;
+      color: inherit; }
     .form__checkbox-wrap label .checkmark {
       position: absolute;
       top: 0px;
@@ -2671,7 +2676,7 @@ img[data-srcset] {
   max-width: 100%; }
 
 .modal-interest .modal__content p {
-  max-width: 155px; }
+  max-width: 185px; }
 @media screen and (min-width: 992px) {
   .modal-interest .modal__content p {
     max-width: 424px; } }
@@ -2783,6 +2788,8 @@ img[data-srcset] {
   -webkit-transition: 0.3s all ease-in-out;
   -o-transition: 0.3s all ease-in-out;
   transition: 0.3s all ease-in-out; }
+  .modal__close-btn.show-in-mob {
+    padding: 10px 0; }
   .modal__close-btn span {
     display: block;
     height: 2px;
@@ -2824,6 +2831,7 @@ img[data-srcset] {
       max-width: 424px; } }
 
 .modal__content-title {
+  font-family: "ivymode", sans-serif;
   text-transform: uppercase;
   font-weight: 400;
   margin-bottom: 8px;
@@ -2860,6 +2868,7 @@ img[data-srcset] {
   background-color: #59d194;
   color: #1d1e1c;
   text-transform: uppercase;
+  font-family: "input-mono", monospace;
   font-size: 12px;
   font-weight: 200;
   letter-spacing: 0.88px;
@@ -3159,6 +3168,7 @@ img[data-srcset] {
   height: 100%; }
 
 .homepage-follow__name {
+  font-family: "ivymode", sans-serif;
   font-size: 48px;
   font-weight: 400;
   line-height: 49px;

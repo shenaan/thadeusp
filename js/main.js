@@ -19,6 +19,35 @@ $(document).ready(function () {
         });
     });
 
+    //fullpage and scroll
+    $('#fullpage').fullpage({
+        licenseKey: 'B80EC24D-66D9477B-B16E7559-B4301A50',
+        scrollingSpeed: 900,
+        scrollHorizontally: false,
+        scrollOverflow: false, //
+        autoScrolling: false,
+        fitToSection: true,
+        fixedElements: '.header',
+        // normalScrollElements: '.contact-section__map',
+        css3: true,
+        scrollBar: true,
+        verticalCentered: false
+    });
+
+    function handleFullPage() {
+        if (isMobile()) {
+            $.fn.fullpage.setResponsive(true);
+        } else {
+            $.fn.fullpage.setResponsive(false);
+        }
+    }
+
+    function bodyScroll(){
+        if($('body').hasClass('is-loading')){
+            $.fn.fullpage.setAllowScrolling(false)
+        }
+    }
+
     //reseting header
     function headerReset() {
         $('.page-menu').removeClass('is-active');
@@ -60,6 +89,7 @@ $(document).ready(function () {
         centerMode: false
     });
 
+
     function printTime() {
         // timezone info: https://github.com/moment/moment-timezone/blob/develop/data/packed/latest.json
 
@@ -79,6 +109,7 @@ $(document).ready(function () {
     $('.page-nav__list-link').on('click', headerReset);
 
     //modal open
+
     $('.modal__open-link').on('click', function (e) {
         e.preventDefault();
 
@@ -87,14 +118,17 @@ $(document).ready(function () {
 
         $('body').find('.modal__wrap' + href).addClass('is-active');
         $('body, html').addClass('no-scroll-initial');
+        $.fn.fullpage.setAutoScrolling(false);
     });
 
     $('.modal__close-btn').on('click', function (e) {
         $('body, html').removeClass('no-scroll-initial');
         $('.modal__wrap').removeClass('is-active');
+        $.fn.fullpage.setAutoScrolling(true);
     });
 
     //modal success msg
+
     $('.modal-interest').on('submit', function (e) {
         e.preventDefault();
 
@@ -116,38 +150,10 @@ $(document).ready(function () {
         controller.scrollTo(href);
     });
 
-    $('#fullpage').fullpage({
-        licenseKey: 'B80EC24D-66D9477B-B16E7559-B4301A50',
-        scrollingSpeed: 900,
-        scrollHorizontally: false,
-        scrollOverflow: false,  //
-        autoScrolling: false,
-        fitToSection: true,
-        fixedElements: '.header',
-        // normalScrollElements: '.contact-section__map',
-        css3: true,
-        scrollBar: true,
-        verticalCentered: false
-    });
-
-    function handleFullPage() {
-        if (isMobile()) {
-            $.fn.fullpage.setResponsive(true);
-        } else {
-            $.fn.fullpage.setResponsive(false);
-        }
-    }
-
-    function handleFullPageScrolling(){
-        if(!isMobile()){
-            $.fn.fullpage.setAutoScrolling(true);
-        }
-    }
-
     //contact page
 
     $('.membership-form').on('submit', function (e) {
-        e.preventDefault()
+        e.preventDefault();
 
         $('body, html').addClass('no-scroll-initial');
         $('.modal-success').addClass('is-active');
@@ -157,12 +163,12 @@ $(document).ready(function () {
 
     printTime();
     handleFullPage();
-
     $(window).resize(function () {
         headerReset();
         handleFullPage();
     });
 
+    bodyScroll();
     $(window).on('scroll', function (e) {
 
     });

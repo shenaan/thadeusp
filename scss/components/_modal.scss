@@ -74,6 +74,10 @@
   font-family: $Forma;
   text-transform: uppercase;
   @include transition-03();
+
+  &.show-in-mob{
+    padding: 10px 0;
+  }
   span {
     display: block;
     height: 2px;
@@ -126,7 +130,7 @@
 }
 
 .modal__content-title{
-  //font-family: $IvyMode;
+  font-family: $IvyMode;
   text-transform: uppercase;
   font-weight: 400;
   margin-bottom: 8px;
