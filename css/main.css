@@ -3,6 +3,7 @@
 /*--------------TRANSITIONS AND ANIMATIONS----------------*/
 /*-----------------CUSTOM MIXINS-----------------------*/
 /* Slider */
+@import url("https://p.typekit.net/p.css?s=1&k=kix1atf&ht=tk&f=30371.30493.30495.30497.38003.38005.38006.42534&a=6999946&app=typekit&e=css");
 .slick-slider {
   position: relative;
   display: block;
@@ -614,7 +615,7 @@ main {
 
 body {
   padding: 0;
-  font-family: "FormaDJRText-Regular", sans-serif;
+  font-family: "forma-djr-text", sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 1.4;
@@ -648,19 +649,48 @@ ul li {
   list-style-type: none; }
 
 @font-face {
-  font-family: 'FormaDJRText-Regular';
-  src: url("../fonts/FormaDJRText-Regular.eot");
-  src: url("../fonts/FormaDJRText-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/FormaDJRText-Regular.woff2") format("woff2"), url("../fonts/FormaDJRText-Regular.woff") format("woff"), url("../fonts/FormaDJRText-Regular.ttf") format("truetype"), url("../fonts/FormaDJRText-Regular.svg#FormaDJRText-Regular") format("svg");
-  font-weight: normal;
-  font-style: normal; }
+  font-family: "forma-djr-text";
+  src: url("https://use.typekit.net/af/b6a6cc/00000000000000003b9ae4ea/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/b6a6cc/00000000000000003b9ae4ea/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"), url("https://use.typekit.net/af/b6a6cc/00000000000000003b9ae4ea/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+  font-style: normal;
+  font-weight: 400; }
 @font-face {
-  font-family: 'InputMono';
-  src: url("../fonts/InputMono-Thin.eot");
-  src: url("../fonts/InputMono-Thin.eot?#iefix") format("embedded-opentype"), url("../fonts/InputMono-Thin.woff2") format("woff2"), url("../fonts/InputMono-Thin.woff") format("woff"), url("../fonts/InputMono-Thin.ttf") format("truetype"), url("../fonts/InputMono-Thin.svg#InputMono-Thin") format("svg");
-  font-weight: 100;
-  font-style: normal; }
+  font-family: "input-mono";
+  src: url("https://use.typekit.net/af/41d53a/00000000000000003b9ae564/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n2&v=3") format("woff2"), url("https://use.typekit.net/af/41d53a/00000000000000003b9ae564/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n2&v=3") format("woff"), url("https://use.typekit.net/af/41d53a/00000000000000003b9ae564/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n2&v=3") format("opentype");
+  font-style: normal;
+  font-weight: 200; }
+@font-face {
+  font-family: "input-mono";
+  src: url("https://use.typekit.net/af/9ce76a/00000000000000003b9ae566/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff2"), url("https://use.typekit.net/af/9ce76a/00000000000000003b9ae566/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff"), url("https://use.typekit.net/af/9ce76a/00000000000000003b9ae566/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("opentype");
+  font-style: normal;
+  font-weight: 300; }
+@font-face {
+  font-family: "input-mono";
+  src: url("https://use.typekit.net/af/113b28/00000000000000003b9ae568/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/113b28/00000000000000003b9ae568/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"), url("https://use.typekit.net/af/113b28/00000000000000003b9ae568/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+  font-style: normal;
+  font-weight: 400; }
+@font-face {
+  font-family: "ivyjournal";
+  src: url("https://use.typekit.net/af/5bb796/00000000000000003b9b1904/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"), url("https://use.typekit.net/af/5bb796/00000000000000003b9b1904/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"), url("https://use.typekit.net/af/5bb796/00000000000000003b9b1904/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
+  font-style: italic;
+  font-weight: 400; }
+@font-face {
+  font-family: "ivyjournal";
+  src: url("https://use.typekit.net/af/99c7aa/00000000000000003b9b1906/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/99c7aa/00000000000000003b9b1906/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"), url("https://use.typekit.net/af/99c7aa/00000000000000003b9b1906/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+  font-style: normal;
+  font-weight: 400; }
+@font-face {
+  font-family: "ivyjournal";
+  src: url("https://use.typekit.net/af/fbe53a/00000000000000003b9b1907/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"), url("https://use.typekit.net/af/fbe53a/00000000000000003b9b1907/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"), url("https://use.typekit.net/af/fbe53a/00000000000000003b9b1907/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+  font-style: normal;
+  font-weight: 700; }
+@font-face {
+  font-family: "ivymode";
+  src: url("https://use.typekit.net/af/4aaea0/00000000000000003b9b33c9/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/4aaea0/00000000000000003b9b33c9/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"), url("https://use.typekit.net/af/4aaea0/00000000000000003b9b33c9/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+  font-style: normal;
+  font-weight: 400; }
 h1, .h1 {
   font-size: 35px;
+  font-family: "ivymode", sans-serif;
   font-weight: 400;
   line-height: 35px;
   text-transform: uppercase; }
@@ -670,6 +700,7 @@ h1, .h1 {
       line-height: 62px; } }
 
 h2, .h2 {
+  font-family: "ivymode", sans-serif;
   font-size: 25px;
   font-weight: 400;
   line-height: 41px;
@@ -680,7 +711,7 @@ h2, .h2 {
       line-height: 52px; } }
 
 h3, .h3 {
-  font-family: "FormaDJRText-Regular", sans-serif;
+  font-family: "forma-djr-text", sans-serif;
   font-size: 20px;
   font-weight: 400;
   letter-spacing: 1.2px;
@@ -693,7 +724,7 @@ h3, .h3 {
       letter-spacing: 1.5px; } }
 
 h4, .h4 {
-  font-family: "InputMono", sans-serif;
+  font-family: "input-mono", monospace;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 1.12px;
@@ -707,7 +738,7 @@ h4, .h4 {
       line-height: 25px; } }
 
 h5, .h5 {
-  font-family: "InputMono", sans-serif;
+  font-family: "input-mono", monospace;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 1.28px;
@@ -716,6 +747,7 @@ h5, .h5 {
   color: #59d194; }
 
 p {
+  font-family: "ivyjournal", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 22px; }
@@ -1919,7 +1951,7 @@ body {
     color: #fff; }
 
 .page-menu__list-link {
-  font-family: "FormaDJRText-Regular", sans-serif;
+  font-family: "forma-djr-text", sans-serif;
   display: inline-block;
   font-size: 31px;
   font-weight: 400;
@@ -2069,7 +2101,7 @@ body {
   margin: auto;
   width: 100%;
   z-index: 151;
-  font-family: "FormaDJRText-Regular", sans-serif;
+  font-family: "forma-djr-text", sans-serif;
   -webkit-transition: 0.3s all ease-in-out;
   -o-transition: 0.3s all ease-in-out;
   transition: 0.3s all ease-in-out; }
@@ -2219,7 +2251,7 @@ body {
   padding: 35px 0; }
   .footer a {
     color: #1d1e1c;
-    font-family: "FormaDJRText-Regular", sans-serif;
+    font-family: "forma-djr-text", sans-serif;
     text-transform: uppercase;
     font-weight: 400;
     font-size: 12px;
@@ -2321,6 +2353,10 @@ img[data-srcset] {
   display: block;
   min-height: 1px; }
 
+.fullpage.contact .page-section__footer {
+  height: auto !important; }
+  .fullpage.contact .page-section__footer .fp-tableCell {
+    height: auto !important; }
 @media screen and (max-width: 992px) {
   .fullpage {
     height: auto !important;
@@ -2447,6 +2483,7 @@ img[data-srcset] {
   margin-bottom: 30px; }
 
 .form__input {
+  font-family: "input-mono", monospace;
   width: 100%;
   display: inline-block;
   border: none !important;
@@ -2458,19 +2495,19 @@ img[data-srcset] {
   background: transparent;
   color: rgba(255, 255, 255, 0.2); }
   .form__input.placeholder {
-    color: inherit;
+    color: rgba(255, 255, 255, 0.2);
     font-size: inherit; }
   .form__input:-moz-placeholder {
-    color: inherit;
+    color: rgba(255, 255, 255, 0.2);
     font-size: inherit; }
   .form__input::-moz-placeholder {
-    color: inherit;
+    color: rgba(255, 255, 255, 0.2);
     font-size: inherit; }
   .form__input:-ms-input-placeholder {
-    color: inherit;
+    color: rgba(255, 255, 255, 0.2);
     font-size: inherit; }
   .form__input::-webkit-input-placeholder {
-    color: inherit;
+    color: rgba(255, 255, 255, 0.2);
     font-size: inherit; }
   @media screen and (min-width: 992px) {
     .form__input {
@@ -2492,19 +2529,19 @@ img[data-srcset] {
   background: transparent;
   color: rgba(255, 255, 255, 0.2); }
   .form__textarea.placeholder {
-    color: inherit;
+    color: rgba(255, 255, 255, 0.2);
     font-size: inherit; }
   .form__textarea:-moz-placeholder {
-    color: inherit;
+    color: rgba(255, 255, 255, 0.2);
     font-size: inherit; }
   .form__textarea::-moz-placeholder {
-    color: inherit;
+    color: rgba(255, 255, 255, 0.2);
     font-size: inherit; }
   .form__textarea:-ms-input-placeholder {
-    color: inherit;
+    color: rgba(255, 255, 255, 0.2);
     font-size: inherit; }
   .form__textarea::-webkit-input-placeholder {
-    color: inherit;
+    color: rgba(255, 255, 255, 0.2);
     font-size: inherit; }
   @media screen and (min-width: 992px) {
     .form__textarea {
@@ -2513,7 +2550,7 @@ img[data-srcset] {
       line-height: 25px; } }
 
 .form__submit-btn {
-  font-family: "InputMono", sans-serif;
+  font-family: "input-mono", monospace;
   font-weight: 400;
   text-transform: uppercase;
   font-size: 14px;
@@ -2551,6 +2588,7 @@ img[data-srcset] {
     padding-left: 23px;
     display: inline-block;
     color: #fff;
+    font-family: "ivymode", sans-serif;
     font-size: 10px;
     font-weight: 400;
     line-height: 16px; }
@@ -2738,7 +2776,7 @@ img[data-srcset] {
   background: transparent !important;
   border: none !important;
   color: rgba(255, 255, 255, 0.2);
-  font-family: "FormaDJRText-Regular", sans-serif;
+  font-family: "forma-djr-text", sans-serif;
   text-transform: uppercase;
   -webkit-transition: 0.3s all ease-in-out;
   -o-transition: 0.3s all ease-in-out;
@@ -2796,10 +2834,14 @@ img[data-srcset] {
 
 .modal__link-wrap {
   margin-top: auto;
+  margin-bottom: auto;
   text-align: center; }
+  @media screen and (min-width: 992px) {
+    .modal__link-wrap {
+      margin-bottom: 0; } }
 
 .modal__link {
-  font-family: "InputMono", sans-serif;
+  font-family: "input-mono", monospace;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 1.12px;
@@ -2856,7 +2898,7 @@ img[data-srcset] {
       bottom: 40px; } }
 
 .page__link--green {
-  font-family: "InputMono", sans-serif;
+  font-family: "input-mono", monospace;
   color: #59d194;
   display: inline-block;
   text-transform: uppercase;
@@ -3201,7 +3243,7 @@ img[data-srcset] {
       margin-bottom: 40px; } }
 
 .homepage-contact__info-text {
-  font-family: "FormaDJRText-Regular", sans-serif;
+  font-family: "forma-djr-text", sans-serif;
   display: inline-block;
   color: #fff;
   font-size: 18px;

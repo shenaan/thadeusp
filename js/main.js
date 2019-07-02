@@ -60,7 +60,6 @@ $(document).ready(function () {
         centerMode: false
     });
 
-
     function printTime() {
         // timezone info: https://github.com/moment/moment-timezone/blob/develop/data/packed/latest.json
 
@@ -76,8 +75,6 @@ $(document).ready(function () {
         });
     }
     setInterval(printTime, 1000);
-
-    // menu image replacement
 
     $('.page-nav__list-link').on('click', headerReset);
 
@@ -119,6 +116,34 @@ $(document).ready(function () {
         controller.scrollTo(href);
     });
 
+    $('#fullpage').fullpage({
+        licenseKey: 'B80EC24D-66D9477B-B16E7559-B4301A50',
+        scrollingSpeed: 900,
+        scrollHorizontally: false,
+        scrollOverflow: false,  //
+        autoScrolling: false,
+        fitToSection: true,
+        fixedElements: '.header',
+        // normalScrollElements: '.contact-section__map',
+        css3: true,
+        scrollBar: true,
+        verticalCentered: false
+    });
+
+    function handleFullPage() {
+        if (isMobile()) {
+            $.fn.fullpage.setResponsive(true);
+        } else {
+            $.fn.fullpage.setResponsive(false);
+        }
+    }
+
+    function handleFullPageScrolling(){
+        if(!isMobile()){
+            $.fn.fullpage.setAutoScrolling(true);
+        }
+    }
+
     //contact page
 
     $('.membership-form').on('submit', function (e) {
@@ -126,12 +151,16 @@ $(document).ready(function () {
 
         $('body, html').addClass('no-scroll-initial');
         $('.modal-success').addClass('is-active');
-        $('.membership-form').get(0).reset();
+        $('.membership-form').get(0).reset().blur();
     });
 
+
     printTime();
+    handleFullPage();
+
     $(window).resize(function () {
         headerReset();
+        handleFullPage();
     });
 
     $(window).on('scroll', function (e) {

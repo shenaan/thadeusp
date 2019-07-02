@@ -140,7 +140,11 @@
 
 .modal__link-wrap{
   margin-top: auto;
+  margin-bottom: auto;
   text-align: center;
+  @include respond-min(992){
+    margin-bottom: 0;
+  }
 }
 
 .modal__link{

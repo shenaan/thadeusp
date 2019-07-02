@@ -7,6 +7,18 @@
 //}
 
 .fullpage {
+
+  &.contact{
+
+    .page-section__footer{
+      height: auto !important;
+
+      .fp-tableCell {
+        height: auto !important;
+      }
+    }
+  }
+
   @include respond-max(992) {
     height: auto !important;
     @include display-flex();

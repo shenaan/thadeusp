@@ -144,9 +144,9 @@
     </div>
 </nav>
 
-<div class="fullpage contact">
+<div class="fullpage contact" id="fullpage">
 
-    <div class="section page-section contact-section contact-section__london" id="contact-section__map-london">
+    <div class="section page-section contact-section contact-section__map contact-section__london" id="contact-section__map-london">
         <div class="page-section__row">
             <div class="page-section__col page-section__col-img">
                 <div class="contact__map" id="map__london"></div>
@@ -163,7 +163,7 @@
         </div>
     </div>
 
-    <div class="section page-section contact-section" id="contact-section__map-macau">
+    <div class="section page-section contact-section contact-section__map contact-section__macau" id="contact-section__map-macau">
         <div class="page-section__row">
             <div class="page-section__col page-section__col-text order-1 order-lg-0">
                 <div class="page-section__col-content">
@@ -171,7 +171,7 @@
                     <h2>REQUEST@THADEUS.COM</h2>
                     <h3>SUITE B, 10/F, GREAT WILL BUILDING
                         665 AVENIDA DA PRAIA GRANDE, MACAU</h3>
-                    <a href="#" class="page-scroll__link page-scroll__btn"></a>
+                    <a href="#contact__membership" class="page-scroll__link page-scroll__btn"></a>
                 </div>
                 <div class="page__link-wrap">
                     <a href="#contact__membership" class="page__link--green page-scroll__btn">APPLY FOR MEMBERSHIP</a>
@@ -219,7 +219,7 @@
         </div>
     </div>
 
-    <div class="section" id="homepage-contact">
+    <div class="section fp-auto-height-responsive page-section__footer">
         <div class="homepage-contact__mail">
             <div class="main-container">
                 <div class="homepage-contact__mail-inner">
@@ -242,7 +242,6 @@
                 </div>
             </div>
         </div>
-
         <footer class="footer">
             <div class="main-container">
                 <div class="footer__inner">
@@ -374,10 +373,10 @@
 <script src="js/main.js"></script>
 
 <script>
-    // necessary variables
+    // https://codepen.io/Marnoto/pen/VLjVZZ
+
     var mapLondon, mapMacau;
 
-    // markersData variable stores the information necessary to each marker
     var markersDataLondon = [
         {
             lat: 51.4986949,
@@ -393,13 +392,12 @@
     ];
 
     function initialize(setMap) {
-
         var mapOptions;
 
         if(setMap == "mapLondon") {
             mapOptions = {
                 center: new google.maps.LatLng(51.4986949,-0.1661169),
-                zoom: 5,
+                zoom: 13,
                 mapTypeControlOptions: {
                     mapTypeIds: ['roadmap', 'styled_map']
                 },
@@ -578,7 +576,7 @@
         } else {
             mapOptions = {
                 center: new google.maps.LatLng(22.192865,113.5396),
-                zoom: 5,
+                zoom: 13,
                 mapTypeControlOptions: {
                     mapTypeIds: ['roadmap', 'styled_map']
                 },
@@ -756,22 +754,13 @@
         }
         displayMarkers(setMap);
 
-        // Create second map only when initialize function is called for the first time.
-        // Second time setMap is equal to mapRight, so this condition returns false and it will not run
         if(setMap == "mapLondon"){
             initialize("mapMacau");
         }
-        // Create second map only when initialize function is called for the first time.
-        // Second time setMap is equal to mapMacau, so this condition returns false and it will not run
-
         google.maps.event.addDomListener(window, 'load', function(){ initialize("mapLondon") });
     }
 
-
-    // This function will iterate over markersData array
-    // creating markers with createMarker function
     function displayMarkers(setMap){
-
         var markersData;
         var map;
 
@@ -783,30 +772,17 @@
             map = mapMacau;
         }
 
-        // // this variable sets the map bounds according to markers position
         var bounds = new google.maps.LatLngBounds();
 
-        // for loop traverses markersData array calling createMarker function for each marker
         for (var i = 0; i < markersData.length; i++){
 
             var latlng = new google.maps.LatLng(markersData[i].lat, markersData[i].lng);
 
             createMarker(setMap, latlng);
-
-            // marker position is added to bounds variable
-            bounds.extend(latlng);
         }
-
-        // Finally the bounds variable is used to set the map bounds
-        // with fitBounds() function
-        map.fitBounds(bounds);
     }
 
-
-
-    // This function creates each marker and it sets their Info Window content
     function createMarker(setMap, latlng) {
-
         var map;
         var image = 'img/general/map-marker.png';
 
