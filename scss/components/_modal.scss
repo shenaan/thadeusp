@@ -30,7 +30,7 @@
   z-index: -1;
   opacity: 0;
   visibility: hidden;
-  @include translateY(30%);
+  @include translateY(-30%);
   transition-delay: 0.2s;
 
   &.is-active{
@@ -38,12 +38,9 @@
     visibility: visible;
     z-index: 200;
     @include translateY(0);
-  }
-  &.is-hidden{
-    @include translateY(30%);
-    z-index: -1;
-    opacity: 0;
-    visibility: hidden;
+    &.modal-success{
+      z-index: 201;
+    }
   }
 }
 

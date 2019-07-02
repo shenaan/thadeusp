@@ -92,6 +92,43 @@ $(document).ready(function () {
         $('body, html').addClass('no-scroll-initial');
     });
 
+    $('.modal__close-btn').on('click', function (e) {
+        $('body, html').removeClass('no-scroll-initial');
+        $('.modal__wrap').removeClass('is-active');
+    });
+
+    //modal success msg
+    $('.modal-interest').on('submit', function (e) {
+        e.preventDefault();
+
+        setTimeout(function () {
+            $('.modal-success').addClass('is-active');
+        },600);
+        $(this).removeClass('is-active');
+        $('.form-interest input').val('');
+    });
+
+    //scroll btn
+
+    $('.page-scroll__btn').on('click', function (e) {
+        e.preventDefault();
+
+        var $this = $(this),
+            href = $this.attr('href');
+
+        controller.scrollTo(href);
+    });
+
+    //contact page
+
+    $('.membership-form').on('submit', function (e) {
+        e.preventDefault()
+
+        $('body, html').addClass('no-scroll-initial');
+        $('.modal-success').addClass('is-active');
+        $('.membership-form input').val('');
+    });
+
     printTime();
     $(window).resize(function () {
         headerReset();

@@ -6,7 +6,7 @@
 //  }
 //}
 
-.homepage.fullpage {
+.fullpage {
   @include respond-max(992) {
     height: auto !important;
     @include display-flex();

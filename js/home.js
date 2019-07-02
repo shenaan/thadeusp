@@ -113,22 +113,6 @@ $(document).ready(function () {
         $('.homepage-mail__form input').val('');
     });
 
-    $('.modal__close-btn').on('click', function (e) {
-        $('body, html').removeClass('no-scroll-initial');
-        $(this).parents('.modal__wrap').removeClass('is-active');
-    });
-
-    //homepage scroll btn
-
-    $('.homepage-scroll__btn').on('click', function (e) {
-        e.preventDefault();
-
-        var $this = $(this),
-            href = $this.attr('href');
-
-        controller.scrollTo(href);
-    });
-
     handleFullPage();
 
     $(window).resize(function () {
