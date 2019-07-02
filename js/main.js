@@ -29,7 +29,6 @@ $(document).ready(function () {
         autoScrolling: true,
         fitToSection: true,
         fixedElements: '.header',
-        // normalScrollElements: '.contact-section__map',
         css3: true,
         scrollBar: true,
         verticalCentered: false
@@ -150,6 +149,15 @@ $(document).ready(function () {
             href = $this.attr('href');
 
         controller.scrollTo(href);
+    });
+
+    //mail form subscribe
+    $('.page-mail__form').on('submit', function (e) {
+        e.preventDefault();
+
+        $('body, html').addClass('no-scroll-initial');
+        $('.modal-success').addClass('is-active');
+        $('.page-mail__form').get(0).reset();
     });
 
     //contact page

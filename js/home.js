@@ -80,13 +80,7 @@ $(document).ready(function () {
 
     //homepage modal
 
-    $('.homepage-mail__form').on('submit', function (e) {
-        e.preventDefault();
 
-        $('body, html').addClass('no-scroll-initial');
-        $('.modal-success').addClass('is-active');
-        $('.homepage-mail__form').get(0).reset();
-    });
 
     $(window).resize(function () {
 

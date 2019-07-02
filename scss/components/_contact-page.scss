@@ -1,4 +1,5 @@
 .contact-section{
+
   .page-section__col-content{
     max-width: 527px;
     text-align: center;
@@ -23,7 +24,14 @@
 
 .contact-section__london{
   padding-top: 97px;
-
+  .page-section__col-text{
+    padding: 120px 15px 150px;
+  }
+  @include respond-min(576) {
+    .page-section__col-text {
+      padding: 120px 45px 150px;
+    }
+  }
   @include respond-min(992){
     padding-top: 0;
   }

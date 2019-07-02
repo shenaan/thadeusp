@@ -40,6 +40,8 @@
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
+  padding-left: 0;
+  padding-right: 0;
 
   @include respond-min(992) {
     height: 100%;

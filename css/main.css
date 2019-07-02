@@ -2065,7 +2065,9 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh; }
+  height: 100vh;
+  padding-left: 0;
+  padding-right: 0; }
   @media screen and (min-width: 992px) {
     .page-section__col-img {
       height: 100%; } }
@@ -3272,98 +3274,99 @@ img[data-srcset] {
       line-height: 27px; } }
 
 /*------Mail subscribe-------*/
-.homepage-contact__mail {
+.page-contact__mail {
   padding: 70px 0; }
   @media screen and (min-width: 992px) {
-    .homepage-contact__mail {
+    .page-contact__mail {
       padding: 35px 0; } }
 
-.homepage-contact__mail-inner {
+.page-contact__mail-inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
   @media screen and (min-width: 992px) {
-    .homepage-contact__mail-inner {
+    .page-contact__mail-inner {
       -ms-flex-wrap: nowrap;
       flex-wrap: nowrap; } }
 
-.homepage-contact__mail-item {
+.page-contact__mail-item {
   width: 100%;
   max-width: 100%; }
   @media screen and (min-width: 992px) {
-    .homepage-contact__mail-item {
+    .page-contact__mail-item {
       width: 50%;
       max-width: 50%; } }
 
-.homepage-contact__label {
+.page-contact__label {
   margin-bottom: 50px; }
-  .homepage-contact__label p {
-    max-width: 195px;
+  .page-contact__label p {
+    max-width: 215px;
     text-align: center;
     margin-left: auto;
     margin-right: auto; }
   @media screen and (min-width: 992px) {
-    .homepage-contact__label {
+    .page-contact__label {
       margin-bottom: 0; }
-      .homepage-contact__label p {
-        max-width: 285px;
+      .page-contact__label p {
+        max-width: 347px;
         text-align: left;
         margin-left: 0; } }
 
-.homepage-contact__mail-form {
+.page-contact__mail-form {
   margin-top: auto;
   margin-bottom: 2px; }
 
-.homepage-contact__form-row {
+.page-contact__form-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
   @media screen and (min-width: 992px) {
-    .homepage-contact__form-row {
+    .page-contact__form-row {
       -ms-flex-wrap: nowrap;
       flex-wrap: nowrap; } }
 
-.homepage-contact__form-input-wrap {
+.page-contact__form-input-wrap {
   width: 100%;
   max-width: 100%;
   margin-bottom: 50px; }
-  .homepage-contact__form-input-wrap input {
+  .page-contact__form-input-wrap input {
     color: rgba(29, 30, 28, 0.2);
-    border-bottom: 1px solid #1d1e1c !important; }
-    .homepage-contact__form-input-wrap input.placeholder {
+    border-bottom: 1px solid #1d1e1c !important;
+    padding-bottom: 2px; }
+    .page-contact__form-input-wrap input.placeholder {
       color: rgba(29, 30, 28, 0.2);
       font-size: inherit; }
-    .homepage-contact__form-input-wrap input:-moz-placeholder {
+    .page-contact__form-input-wrap input:-moz-placeholder {
       color: rgba(29, 30, 28, 0.2);
       font-size: inherit; }
-    .homepage-contact__form-input-wrap input::-moz-placeholder {
+    .page-contact__form-input-wrap input::-moz-placeholder {
       color: rgba(29, 30, 28, 0.2);
       font-size: inherit; }
-    .homepage-contact__form-input-wrap input:-ms-input-placeholder {
+    .page-contact__form-input-wrap input:-ms-input-placeholder {
       color: rgba(29, 30, 28, 0.2);
       font-size: inherit; }
-    .homepage-contact__form-input-wrap input::-webkit-input-placeholder {
+    .page-contact__form-input-wrap input::-webkit-input-placeholder {
       color: rgba(29, 30, 28, 0.2);
       font-size: inherit; }
   @media screen and (min-width: 992px) {
-    .homepage-contact__form-input-wrap {
+    .page-contact__form-input-wrap {
       width: calc(100% - 90px);
       max-width: calc(100% - 90px);
       margin-bottom: 0; }
-      .homepage-contact__form-input-wrap input {
+      .page-contact__form-input-wrap input {
         font-size: 16px;
         letter-spacing: 1.28px;
         line-height: 23px; } }
 
-.homepage-form__submit-wrap {
+.page-form__submit-wrap {
   margin-left: auto;
   margin-right: auto; }
   @media screen and (min-width: 992px) {
-    .homepage-form__submit-wrap {
+    .page-form__submit-wrap {
       margin-top: auto;
       margin-right: 0; } }
 
@@ -3383,6 +3386,11 @@ img[data-srcset] {
 
 .contact-section__london {
   padding-top: 97px; }
+  .contact-section__london .page-section__col-text {
+    padding: 120px 15px 150px; }
+  @media screen and (min-width: 576px) {
+    .contact-section__london .page-section__col-text {
+      padding: 120px 45px 150px; } }
   @media screen and (min-width: 992px) {
     .contact-section__london {
       padding-top: 0; } }
