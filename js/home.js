@@ -62,7 +62,7 @@ $(document).ready(function () {
             .to(contentActive, 1, {delay: 0.3, opacity: 1, zIndex: '1', scaleX: 1})
     }
 
-    //homepage load
+    //homepage load animation
 
     $(document).on('click', '.section__hero-default', function () {
         $('.section__hero').removeClass('section__hero-default');
@@ -71,8 +71,8 @@ $(document).ready(function () {
             $('body, html').removeClass('no-scroll is-loading');
             $('body').addClass('has-loaded');
             $.fn.fullpage.setAllowScrolling(true);
-            if(!isMobile()){
-                $.fn.fullpage.setAutoScrolling(true);
+            if(isMobile()){
+                $.fn.fullpage.setAutoScrolling(false);
             }
         },500)
 
@@ -88,9 +88,7 @@ $(document).ready(function () {
         $('.homepage-mail__form').get(0).reset();
     });
 
-    // handleFullPage();
-
     $(window).resize(function () {
-        // handleFullPage();
+
     });
 });

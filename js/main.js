@@ -19,13 +19,14 @@ $(document).ready(function () {
         });
     });
 
-    //fullpage and scroll
+    //fullpage and body scroll
+
     $('#fullpage').fullpage({
         licenseKey: 'B80EC24D-66D9477B-B16E7559-B4301A50',
         scrollingSpeed: 900,
         scrollHorizontally: false,
         scrollOverflow: false, //
-        autoScrolling: false,
+        autoScrolling: true,
         fitToSection: true,
         fixedElements: '.header',
         // normalScrollElements: '.contact-section__map',
@@ -49,6 +50,7 @@ $(document).ready(function () {
     }
 
     //reseting header
+
     function headerReset() {
         $('.page-menu').removeClass('is-active');
         $('.hamburger').removeClass('is-active');
@@ -72,6 +74,8 @@ $(document).ready(function () {
         }
     });
 
+    $('.page-nav__list-link').on('click', headerReset);
+
     $('.header-stock__slider').slick({
         autoplay: true,
         infinite: true,
@@ -89,7 +93,6 @@ $(document).ready(function () {
         centerMode: false
     });
 
-
     function printTime() {
         // timezone info: https://github.com/moment/moment-timezone/blob/develop/data/packed/latest.json
 
@@ -104,11 +107,10 @@ $(document).ready(function () {
             $this.text(moment().tz(tz).format('HH:mm'));
         });
     }
+
     setInterval(printTime, 1000);
 
-    $('.page-nav__list-link').on('click', headerReset);
-
-    //modal open
+    //modal
 
     $('.modal__open-link').on('click', function (e) {
         e.preventDefault();

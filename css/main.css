@@ -2356,7 +2356,8 @@ img[data-srcset] {
   min-height: 1px; }
 
 .fullpage.contact .page-section__footer {
-  height: auto !important; }
+  height: auto !important;
+  min-height: 100px !important; }
   .fullpage.contact .page-section__footer .fp-tableCell {
     height: auto !important; }
 @media screen and (max-width: 992px) {

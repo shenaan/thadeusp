@@ -1,17 +1,10 @@
-//.footer.section.fp-section {
-//  height: auto !important;
-//
-//  .fp-tableCell {
-//    height: auto !important;
-//  }
-//}
-
 .fullpage {
 
   &.contact{
 
     .page-section__footer{
       height: auto !important;
+      min-height: 100px !important;
 
       .fp-tableCell {
         height: auto !important;
