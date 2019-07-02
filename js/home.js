@@ -110,7 +110,7 @@ $(document).ready(function () {
 
         $('body, html').addClass('no-scroll-initial');
         $('.modal-success').addClass('is-active');
-        $('.homepage-mail__form input').val('');
+        $('.homepage-mail__form').get(0).reset();
     });
 
     handleFullPage();

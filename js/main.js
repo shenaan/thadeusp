@@ -126,7 +126,7 @@ $(document).ready(function () {
 
         $('body, html').addClass('no-scroll-initial');
         $('.modal-success').addClass('is-active');
-        $('.membership-form input').val('');
+        $('.membership-form').get(0).reset();
     });
 
     printTime();
