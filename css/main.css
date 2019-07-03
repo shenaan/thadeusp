@@ -3505,4 +3505,46 @@ img[data-srcset] {
   .membership-form__content .form__btn-wrap {
     text-align: right; } }
 
+.terms__content {
+  padding-top: 180px;
+  padding-bottom: 50px; }
+  @media screen and (min-width: 992px) {
+    .terms__content {
+      padding-top: 280px; } }
+
+.terms__content-heading {
+  text-align: center;
+  margin-bottom: 70px; }
+  .terms__content-heading h1 {
+    text-transform: uppercase; }
+
+.terms__section {
+  max-width: 796px;
+  margin-bottom: 80px;
+  margin-left: auto;
+  margin-right: auto; }
+  .terms__section p {
+    margin-bottom: 30px; }
+    .terms__section p:last-of-type {
+      margin-bottom: 0; }
+  @media screen and (min-width: 992px) {
+    .terms__section {
+      margin-bottom: 160px; } }
+
+.terms__section-heading {
+  text-align: center;
+  margin-bottom: 70px; }
+  .terms__section-heading h3 {
+    text-transform: uppercase; }
+
+.terms__section-subheading {
+  margin-bottom: 33px; }
+  @media screen and (min-width: 992px) {
+    .terms__section-subheading h5 {
+      margin-left: -40px; } }
+
+.terms__section-list {
+  padding: 0;
+  margin: 0; }
+
 /*# sourceMappingURL=main.css.map */
