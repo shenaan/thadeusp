@@ -17,6 +17,52 @@
   }
 }
 
+.header--white{
+  background-color: #fff;
+  color: $textColor;
+
+  .header__logo{
+    position: relative;
+    &:before{
+      content: '';
+      display: block;
+      background: url("#{$imgUrl}logo-dark.svg")no-repeat center /contain;
+      @include square(100%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+    img{
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  .header__lang-item{
+    color: $textColor;
+    opacity: 0.3;
+    &.is-active, &:hover, &:focus, &:active{
+      opacity: 1;
+      color: $textColor;
+    }
+  }
+
+  .header__message-link svg{
+    fill: $textColor;
+  }
+
+  .header__menu-btn{
+    color: $textColor;
+  }
+  .header-stock{
+    background-color: $textColor;
+    color: $greenColor;
+  }
+}
+
 .header__inner {
   @include display-flex();
   @include ai-flex-center();
