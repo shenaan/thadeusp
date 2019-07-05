@@ -115,6 +115,7 @@ $(document).ready(function () {
         if (sectionFixed.hasClass('services-section--fixed')) {
             if (scrollTop >= sectionFixedTop && scrollTop <= sectionFixedBottom) {
                 controller.scrollTo(sectionFixedTop);
+                $('body, html').addClass('no-scroll-initial');
                 $.fn.fullpage.setAllowScrolling(false);
             }
         }
@@ -140,7 +141,7 @@ $(document).ready(function () {
 
             $.fn.fullpage.setAllowScrolling(true);
             $('.services-lifestyle').removeClass('services-section--fixed');
-            $('body, html').removeClass('no-scroll');
+            $('body, html').removeClass('no-scroll-initial');
         }, 500)
 
     });
