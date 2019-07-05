@@ -20,6 +20,12 @@
   }
 }
 
+.page-section__row-scroll{
+  overflow: hidden;
+  max-height: 100vh;
+  height: 100vh;
+}
+
 .page-section__col {
   width: 100%;
   max-width: 100%;
@@ -32,6 +38,12 @@
     max-width: 50%;
     height: 100%;
   }
+}
+
+.page-section__col-full{
+  width: 100%;
+  max-width: 100%;
+  position: relative;
 }
 
 .page-section__col-img {
@@ -48,6 +60,7 @@
   }
 }
 
+
 .page-section__col-text {
   background-color: #fff;
   @include display-flex();
@@ -60,5 +73,23 @@
   @include respond-min(992) {
     padding: 70px 50px;
     min-height: 100%;
+  }
+}
+
+.page-section__col-content{
+  text-align: center;
+  h1{
+    margin-bottom: 17px;
+  }
+}
+
+.page-section__col-fixed{
+
+
+  @include respond-min(992){
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 3;
   }
 }

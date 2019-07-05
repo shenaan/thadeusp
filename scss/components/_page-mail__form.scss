@@ -1,6 +1,7 @@
 /*------Mail subscribe-------*/
 .page-contact__mail {
   padding: 70px 0;
+  background-color: #fff;
 
   @include respond-min(992) {
     padding: 35px 0;
