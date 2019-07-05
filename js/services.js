@@ -1,5 +1,6 @@
 $(document).ready(function () {
     var controller = new ScrollMagic.Controller();
+    var imgSlider, imgSliderSettings;
 
     function isMobile() {
         if ($('.is-mobile').css('display') === 'block') {
@@ -18,6 +19,36 @@ $(document).ready(function () {
             ease: Power2.easeOut
         });
     });
+
+    imgSlider = $('.services-img__slider');
+    imgSliderSettings = {
+        dots: false,
+        arrows: true,
+        fade: false,
+        mobileFirst: true,
+        infinite: false,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: "unslick"
+            }
+        ]
+    };
+
+    imgSlider.slick(imgSliderSettings);
+
+    function imgSliderInit() {
+        if (!isMobile()) {
+            if (imgSlider.hasClass('slick-initialized')) {
+                imgSlider.slick('unslick');
+            }
+            return;
+        }
+
+        if (!imgSlider.hasClass('slick-initialized')) {
+            return imgSlider.slick(imgSliderSettings);
+        }
+    }
 
     function serviceTextAnimation() {
         if (isMobile()) {
@@ -47,34 +78,7 @@ $(document).ready(function () {
             })
         }
     }
-
-    function servicesImgAnimation() {
-        $('.services-section').each(function (i, el) {
-            var $this = $(this),
-                img = $this.find('.page-section__img-inner'),
-                height = $this.outerHeight();
-
-            var imgTl = new TweenMax.to(img, 0.7, {opacity: 1});
-
-            var imgFadeScene = new ScrollMagic.Scene({
-                triggerElement: $(el),
-                offset: 0,
-                triggerHook: 0.5,
-                reverse: true,
-                duration: height
-            })
-                .on('enter', function () {
-                    console.log('enter')
-                    new TweenMax.staggerFromTo(img, 0.7, {opacity: 0}, {opacity: 1}, 0.2);
-                })
-                .on('leave', function () {
-                    console.log('leave')
-                })
-                // .setTween(imgTl)
-                // .addIndicators('green')
-                .addTo(controller);
-        })
-    }
+// services hero animation
 
     function servicesLoadAnimation() {
 
@@ -91,8 +95,6 @@ $(document).ready(function () {
             .staggerFromTo(link, 0.5, {opacity: 0}, {opacity: 1}, 0.3, 'arrows');
     }
 
-// services load animation
-
     $(document).on('click', '.services__hero-default', function () {
         setTimeout(function () {
             servicesLoadAnimation();
@@ -106,18 +108,27 @@ $(document).ready(function () {
 
     });
 
+    //lifestyle section animation
+
+    function lifestyleScrollRemove(sectionFixed, sectionFixedTop) {
+        if (sectionFixed.hasClass('services-section--fixed')) {
+            controller.scrollTo(sectionFixedTop);
+            $('body, html').addClass('no-scroll-initial');
+            $.fn.fullpage.setAllowScrolling(false);
+        }
+    }
+
     function fixedSectionHandle() {
         var sectionFixed = $('.services-lifestyle'),
             sectionFixedTop = sectionFixed.offset().top,
             sectionFixedBottom = sectionFixedTop + sectionFixed.outerHeight(),
             w = $(window),
             scrollTop = w.scrollTop();
-        if (sectionFixed.hasClass('services-section--fixed')) {
-            if (scrollTop >= sectionFixedTop && scrollTop <= sectionFixedBottom) {
-                controller.scrollTo(sectionFixedTop);
-                $('body, html').addClass('no-scroll-initial');
-                $.fn.fullpage.setAllowScrolling(false);
-            }
+        if (scrollTop >= sectionFixedTop && scrollTop < sectionFixedBottom) {
+            lifestyleScrollRemove(sectionFixed, sectionFixedTop);
+            $('.header').addClass('header--white');
+        } else {
+            $('.header').removeClass('header--white');
         }
     }
 
@@ -143,21 +154,19 @@ $(document).ready(function () {
             $('.services-lifestyle').removeClass('services-section--fixed');
             $('body, html').removeClass('no-scroll-initial');
         }, 500)
-
     });
 
     serviceTextAnimation();
-    // servicesImgAnimation();
     fixedSectionHandle();
+    imgSliderInit();
 
     $(window).scroll(function () {
         fixedSectionHandle();
-
     });
 
     $(window).resize(function () {
         fixedSectionHandle();
+        imgSliderInit();
     });
-
-
+    
 });
