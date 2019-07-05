@@ -2168,6 +2168,10 @@ body {
   .header--white .header-stock {
     background-color: #1d1e1c;
     color: #59d194; }
+  .header--white .hamburger .line {
+    background-color: #1d1e1c; }
+  .header--white .hamburger.is-active .line {
+    background-color: #1d1e1c; }
 
 .header__inner {
   display: -webkit-box;

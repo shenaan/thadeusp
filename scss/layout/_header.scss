@@ -61,6 +61,17 @@
     background-color: $textColor;
     color: $greenColor;
   }
+
+  .hamburger{
+    .line{
+      background-color: $textColor;
+    }
+    &.is-active{
+      .line{
+        background-color: $textColor;
+      }
+    }
+  }
 }
 
 .header__inner {
