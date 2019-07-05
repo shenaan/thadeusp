@@ -124,7 +124,7 @@ $(document).ready(function () {
             sectionFixedBottom = sectionFixedTop + sectionFixed.outerHeight(),
             w = $(window),
             scrollTop = w.scrollTop();
-        if (scrollTop >= sectionFixedTop && scrollTop < sectionFixedBottom) {
+        if (scrollTop >= (sectionFixedTop - 10) && scrollTop < sectionFixedBottom) {
             lifestyleScrollRemove(sectionFixed, sectionFixedTop);
             $('.header').addClass('header--white');
         } else {
@@ -168,5 +168,5 @@ $(document).ready(function () {
         fixedSectionHandle();
         imgSliderInit();
     });
-    
+
 });
