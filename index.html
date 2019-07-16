@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/fullpage.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body class="body-home no-scroll is-loading">
+<body class="body-home is-loading">
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
     your browser</a> to improve your experience and security.</p>
@@ -21,7 +21,7 @@
 <div class="is-mobile"></div>
 
 <header class="header">
-    <div class="main-container">
+    <div class="main-container--fluid">
         <div class="header__inner">
             <a href="index.html" class="header__logo">
                 <img src="img/logo-white.svg" alt="Thadeus">
@@ -131,21 +131,18 @@
         </div>
 
         <ul class="page-menu__list">
-            <li class="page-menu__list-item"><a href="about.html" class="page-menu__list-link">About</a></li>
+            <li class="page-menu__list-item"><a href="index.html#homepage__desire" class="page-menu__list-link">About</a></li>
             <li class="page-menu__list-item"><a href="services.html"
                                                 class="page-menu__list-link page-menu__list-link--lg">Services</a></li>
-            <li class="page-menu__list-item"><a href="inspire.html" class="page-menu__list-link">Inspire</a></li>
+            <li class="page-menu__list-item"><a href="index.html#homepage__follow" class="page-menu__list-link">Inspire</a></li>
             <li class="page-menu__list-item"><a href="contact.html"
                                                 class="page-menu__list-link page-menu__list-link--lg">Contact</a></li>
         </ul>
-        <div class="page-menu__shape">
-            <img src="img/general/logo-shape-dark.svg" alt="">
-        </div>
     </div>
 </nav>
 
 <div class="fullpage homepage" id="fullpage">
-    <div class="section section__hero page-section section__hero-default" id="homepage-hero">
+    <div class="section section__hero page-section section__hero-default" id="homepage-hero" data-anchor="homepage__hero">
         <div class="hero__bg hero__default" style="background-image: url('img/homepage/hero-dark.png')">
             <!--<video class="video__bg" webkit-playsinline="playsinline"-->
             <!--playsinline="playsinline"-->
@@ -173,13 +170,9 @@
                     <div class="h1">FOR THOSE WHO KNOW</div>
                     <h3>RARITY, CAPTURED.</h3>
                 </div>
-
-                <div class="hero__shape">
-                    <img src="img/general/logo-shape-green.svg" alt="">
-                </div>
             </div>
             <div class="hero__inner-content--active">
-                <a href="#homepage-section__slide-01" class="hero-scroll__link page-scroll__btn">
+                <a href="#homepage-section__desire" class="hero-scroll__link page-scroll__btn">
                     <svg class="hero-scroll__icon" xmlns="http://www.w3.org/2000/svg" width="18" height="9"
                          viewBox="0 0 18 9">
                         <g>
@@ -195,7 +188,7 @@
         </div>
     </div>
 
-    <div class="section page-section homepage-section" id="homepage-section__slide-01">
+    <div class="section page-section homepage-section" id="homepage-section__desire" data-anchor="homepage__desire">
         <div class="page-section__row">
             <div class="page-section__col page-section__col-img"
                  style="background-image: url('img/homepage/slide-01.png')"></div>
@@ -213,7 +206,7 @@
         </div>
     </div>
 
-    <div class="section page-section homepage-section" id="homepage-section__slide-02">
+    <div class="section page-section homepage-section" id="homepage-section__slide-02" data-anchor="homepage__slide-02">
         <div class="page-section__row">
             <div class="page-section__col page-section__col-text order-1 order-lg-0">
                 <div class="page-section__col-content">
@@ -228,7 +221,7 @@
         </div>
     </div>
 
-    <div class="section page-section homepage-section" id="homepage-section__slide-03">
+    <div class="section page-section homepage-section" id="homepage-section__slide-03" data-anchor="homepage__slide-03">
         <div class="page-section__row">
             <div class="page-section__col page-section__col-img"
                  style="background-image: url('img/homepage/slide-03.png')"></div>
@@ -237,7 +230,7 @@
                     <p>Sequi natur adi officiet et etur aliquia vit laa autenit experia. Sequi natur adi officiet et
                         etur
                         aliquia vit laa autenit experia iusam aritat mo cusae.</p>
-                    <a href="#follow__thadeus" class="page-scroll__link page-scroll__btn"></a>
+                    <a href="#follow-thadeus" class="page-scroll__link page-scroll__btn"></a>
                 </div>
                 <div class="page__link-wrap">
                     <a href="#modal__interest" class="page__link--green modal__open-link">DISCOVER MEMBERSHIP</a>
@@ -246,8 +239,8 @@
         </div>
     </div>
 
-    <div class="section page-section homepage-section homepage-follow" id="follow__thadeus">
-        <div class="main-container">
+    <div class="section page-section homepage-section homepage-follow" id="follow-thadeus" data-anchor="homepage__follow">
+        <div class="main-container--fluid">
             <div class="homepage-follow__title">FOLLOW THADEUS <span class="arrows-down"></span></div>
         </div>
         <div class="homepage-follow__slider">
@@ -293,7 +286,7 @@
                 </a>
             </div>
         </div>
-        <div class="main-container">
+        <div class="main-container--fluid">
             <div class="homepage-follow__name">
                 <a href="http://instagram.com/thadeus_london" class="hide-in-mob" target="_blank"
                    title="Thadeus_London">@THADEUS_LONDON</a>
@@ -323,7 +316,7 @@
         </div>
     </div>
 
-    <div class="section page-section homepage-section homepage-contact" id="homepage-contact">
+    <div class="section page-section homepage-section homepage-contact" id="homepage-contact" data-anchor="homepage__contact">
         <div class="homepage-contact__info">
             <div class="main-container">
                 <div class="homepage-contact__info-inner">
@@ -405,7 +398,7 @@
             </div>
         </div>
         <div class="page-contact__mail">
-            <div class="main-container">
+            <div class="main-container--fluid">
                 <div class="page-contact__mail-inner">
                     <div class="page-contact__label page-contact__mail-item">
                         <p>For the latest news & insights from
@@ -428,7 +421,7 @@
         </div>
 
         <footer class="footer">
-            <div class="main-container">
+            <div class="main-container--fluid">
                 <div class="footer__inner">
                     <div class="footer-copyright footer__inner-item order-1 order-lg-0">
                         <p>© COPYRIGHT THADEUS LONDON 2019</p>
@@ -437,12 +430,12 @@
                         <ul class="footer-nav__list">
                             <li class="footer-nav__list-item order-1 order-lg-0">
                                 <a href="terms.html" class="footer-nav__list-link">TERMS & CONDITIONS</a></li>
-                            <li class="footer-nav__list-item"><a href="about.html"
+                            <li class="footer-nav__list-item"><a href="index.html#homepage__desire"
                                                                  class="footer-nav__list-link">About</a>
                             </li>
                             <li class="footer-nav__list-item"><a href="services.html"
                                                                  class="footer-nav__list-link">Services</a></li>
-                            <li class="footer-nav__list-item"><a href="inspire.html"
+                            <li class="footer-nav__list-item"><a href="index.html#homepage__follow"
                                                                  class="footer-nav__list-link">Inspire</a></li>
                             <li class="footer-nav__list-item"><a href="contact.html"
                                                                  class="footer-nav__list-link">Contact</a></li>
@@ -493,7 +486,7 @@
                         <div class="form__row">
                             <div class="form__col-full form__col">
                                 <div class="form__input-wrap">
-                                    <input type="text" placeholder="FULL name" class="form__input" required>
+                                    <input type="text" placeholder="FULL NAME" class="form__input" required>
                                 </div>
                             </div>
                         </div>
@@ -546,8 +539,6 @@
 <script src="js/vendor/animation.gsap.min.js"></script>
 <script src="js/vendor/ScrollToPlugin.min.js"></script>
 <script src="js/vendor/slick/slick.min.js"></script>
-<script src="js/vendor/lazyload.min.js"></script>
-<script src="js/vendor/scrolloverflow.min.js"></script>
 <script src="js/vendor/fullpage.min.js"></script>
 <script src="js/vendor/moment.min.js"></script>
 <script src="js/vendor/moment-timezone-with-data-10-year-range.min.js"></script>

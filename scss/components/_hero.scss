@@ -15,9 +15,9 @@
   }
 }
 
-.section__hero-default {
-  cursor: pointer;
-}
+//.section__hero-default {
+//  cursor: pointer;
+//}
 
 .hero__bg {
   -webkit-background-size: cover;
@@ -61,19 +61,41 @@
   .h1 {
     font-size: 55px;
     font-weight: 400;
-    line-height: 72px;
+    line-height: 50px;
+    margin-bottom: 30px;
   }
 
   @include respond-min(992) {
     .h1 {
       font-size: 65px;
       line-height: 85px;
+      margin-bottom: 0;
     }
   }
   @include respond-min(1200) {
     .h1 {
       font-size: 77px;
       line-height: 101px;
+    }
+  }
+  @include respond-min(1440){
+    .h1{
+      font-size: 90px;
+      line-height: 130px;
+    }
+    h3{
+      font-size: 30px;
+      line-height: 33px;
+    }
+  }
+  @include respond-min(1660){
+    .h1{
+      font-size: 110px;
+      line-height: 157px;
+    }
+    h3{
+      font-size: 35px;
+      line-height: 39px;
     }
   }
 }

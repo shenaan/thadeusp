@@ -49,6 +49,7 @@
   @include input-placeholder() {
     color: rgba(255, 255, 255, 0.2);
     font-size: inherit;
+    text-transform: uppercase;
   }
 
   @include respond-min(992) {
@@ -73,7 +74,7 @@
     display: block;
     background-color: $greenColor;
     height: 1px;
-    width: calc(100% + 5px);
+    width: 100%;
     @include transition-04();
     @include transform-origin(center);
   }

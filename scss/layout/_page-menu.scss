@@ -12,14 +12,14 @@
   visibility: hidden;
   will-change: transform;
   z-index: -1;
-  @include translateX(100%);
+  @include translateY(-100%);
   @include transition(all 800ms cubic-bezier(0.19, 1, 0.22, 1));
 
   &.is-active {
     opacity: 1;
     visibility: visible;
     z-index: 150;
-    @include translateX(0);
+    @include translateY(0);
   }
   @include respond-min(992) {
     width: 50%;
@@ -85,14 +85,14 @@
   font-size: 31px;
   font-weight: 400;
   letter-spacing: 1.86px;
-  line-height: 62px;
+  line-height: 35px;
   color: $textColor;
   text-transform: uppercase;
 
   @include respond-min(992) {
     font-size: 44px;
     letter-spacing: 2.64px;
-    line-height: 81px;
+    line-height: 55px;
   }
 }
 
@@ -100,10 +100,10 @@
   font-family: $IvyMode;
   font-size: 38px;
   font-weight: 400;
-  line-height: 62px;
+  line-height: 57px;
   @include respond-min(992) {
     font-size: 52px;
-    line-height: 81px;
+    line-height: 65px;
   }
 }
 

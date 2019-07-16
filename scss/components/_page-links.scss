@@ -26,7 +26,8 @@
     display: block;
     background-color: $greenColor;
     height: 1px;
-    width: calc(100% + 10px);
+    //width: calc(100% + 10px);
+    width: 100%;
     @include transition-04();
     @include transform-origin(center);
   }

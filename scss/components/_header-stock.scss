@@ -18,6 +18,17 @@
   }
 }
 
+.header-stock__slider{
+  visibility: hidden;
+  opacity: 0;
+  height: 22px;
+  &.slick-initialized{
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+  }
+}
+
 .header-stock__item{
   padding: 0 5px;
   //border: 1px solid black;

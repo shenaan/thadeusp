@@ -71,7 +71,8 @@
   min-height: 450px;
 
   @include respond-min(992) {
-    padding: 70px 50px;
+    //padding: 124px 50px 70px;
+    padding: 184px 50px 70px;
     min-height: 100%;
   }
 }

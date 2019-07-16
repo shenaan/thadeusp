@@ -2,7 +2,6 @@
   max-width: 100%;
   padding: 0 15px;
   @include center();
-  //border: 1px solid yellow;
 
   @include respond-min(1340){
     max-width: 1300px;
@@ -12,4 +11,7 @@
 .main-container--fluid{
   width: 100%;
   padding: 0 15px;
+  @include respond-min(1400){
+    padding: 0 40px;
+  }
 }
