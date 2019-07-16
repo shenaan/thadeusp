@@ -62,6 +62,11 @@ $(document).ready(function () {
         $('body, html').toggleClass('no-scroll-initial');
         $('.page-menu').toggleClass('is-active');
         $('.hamburger').toggleClass('is-active');
+
+    });
+
+    $('.page-menu__list-link').on('click', function () {
+        headerReset();
     });
 
     $(document).on('click', function (e) {
@@ -93,7 +98,7 @@ $(document).ready(function () {
     });
 
     function printTime() {
-        // timezone info: https://github.com/moment/moment-timezone/blob/develop/data/packed/latest.json
+        /* timezone info: https://github.com/moment/moment-timezone/blob/develop/data/packed/latest.json */
 
         var now = moment().format("hh:mm"); // Your Current Time.
 
@@ -173,12 +178,13 @@ $(document).ready(function () {
 
     printTime();
     handleFullPage();
+    // bodyScroll();
+
     $(window).resize(function () {
         headerReset();
         handleFullPage();
     });
 
-    bodyScroll();
     $(window).on('scroll', function (e) {
 
     });

@@ -1,6 +1,7 @@
 $(document).ready(function () {
     var controller = new ScrollMagic.Controller();
     var imgSlider, imgSliderSettings;
+    var heroServicesScene;
 
     function isMobile() {
         if ($('.is-mobile').css('display') === 'block') {
@@ -78,6 +79,7 @@ $(document).ready(function () {
             })
         }
     }
+
 // services hero animation
 
     function servicesLoadAnimation() {
@@ -95,18 +97,32 @@ $(document).ready(function () {
             .staggerFromTo(link, 0.5, {opacity: 0}, {opacity: 1}, 0.3, 'arrows');
     }
 
-    $(document).on('click', '.services__hero-default', function () {
-        setTimeout(function () {
-            servicesLoadAnimation();
-            $('body, html').removeClass('no-scroll is-loading');
-            $('body').addClass('has-loaded');
-            $.fn.fullpage.setAllowScrolling(true);
-            if (isMobile()) {
-                $.fn.fullpage.setAutoScrolling(false);
-            }
-        }, 500)
+    // setTimeout(servicesLoadAnimation, 800);
 
-    });
+    heroServicesScene = new ScrollMagic.Scene({
+        triggerElement: $('.services__hero-active'),
+        duration: '100%',
+        reverse: false,
+        offset: 0,
+        triggerHook: 0
+    })
+        .on('enter', function () {
+            setTimeout(servicesLoadAnimation, 800);
+            // homepageLoadAnimation()
+        })
+        .addTo(controller);
+
+    // $(document).on('click', '.services__hero-default', function () {
+    //     setTimeout(function () {
+    //         servicesLoadAnimation();
+    //         $('body, html').removeClass('no-scroll is-loading');
+    //         $('body').addClass('has-loaded');
+    //         $.fn.fullpage.setAllowScrolling(true);
+    //         if (isMobile()) {
+    //             $.fn.fullpage.setAutoScrolling(false);
+    //         }
+    //     }, 500)
+    // });
 
     //lifestyle section animation
 
