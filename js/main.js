@@ -26,13 +26,14 @@ $(document).ready(function () {
         scrollingSpeed: 900,
         scrollHorizontally: false,
         scrollOverflow: false, //
-        autoScrolling: true,
+        autoScrolling: false,
         fitToSection: true,
         fixedElements: '.header',
         css3: true,
         scrollBar: true,
         verticalCentered: false,
-        lockAnchors: true
+        lockAnchors: true,
+        animateAnchor: false
     });
 
     function handleFullPage() {
