@@ -30,7 +30,7 @@ $(document).ready(function () {
         fitToSection: true,
         fixedElements: '.header',
         css3: true,
-        scrollBar: false,
+        scrollBar: true,
         verticalCentered: false
     });
 
