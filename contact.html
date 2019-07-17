@@ -131,19 +131,28 @@
         </div>
 
         <ul class="page-menu__list">
-            <li class="page-menu__list-item"><a href="index.html#homepage__desire" class="page-menu__list-link">About</a></li>
-            <li class="page-menu__list-item"><a href="services.html"
-                                                class="page-menu__list-link page-menu__list-link--lg">Services</a></li>
-            <li class="page-menu__list-item"><a href="index.html#homepage__follow" class="page-menu__list-link">Inspire</a></li>
-            <li class="page-menu__list-item"><a href="contact.html"
-                                                class="page-menu__list-link page-menu__list-link--lg">Contact</a></li>
+            <li class="page-menu__list-item">
+                <a href="index.html#homepage__desire" class="page-menu__list-link">About</a>
+            </li>
+            <li class="page-menu__list-item">
+                <a href="services.html"
+                   class="page-menu__list-link page-menu__list-link--lg">Services</a>
+            </li>
+            <li class="page-menu__list-item">
+                <a href="index.html#homepage__follow" class="page-menu__list-link">Inspire</a>
+            </li>
+            <li class="page-menu__list-item">
+                <a href="contact.html"
+                   class="page-menu__list-link page-menu__list-link--lg">Contact</a>
+            </li>
         </ul>
     </div>
 </nav>
 
 <div class="fullpage contact" id="fullpage">
 
-    <div class="section page-section contact-section contact-section__map contact-section__london" id="contact-section__map-london">
+    <div class="section page-section contact-section contact-section__map contact-section__london"
+         id="contact-section__map-london">
         <div class="page-section__row">
             <div class="page-section__col page-section__col-img">
                 <div class="contact__map" id="map__london"></div>
@@ -160,7 +169,8 @@
         </div>
     </div>
 
-    <div class="section page-section contact-section contact-section__map contact-section__macau" id="contact-section__map-macau">
+    <div class="section page-section contact-section contact-section__map contact-section__macau"
+         id="contact-section__map-macau">
         <div class="page-section__row">
             <div class="page-section__col page-section__col-text order-1 order-lg-0">
                 <div class="page-section__col-content">
@@ -188,7 +198,8 @@
                 </div>
 
                 <div class="membership-form__wrap">
-                    <div class="membership-form__img membership-form__wrap-item" style="background-image: url('img/contact/form-bg.png')"></div>
+                    <div class="membership-form__img membership-form__wrap-item"
+                         style="background-image: url('img/contact/form-bg.png')"></div>
                     <div class="membership-form__content membership-form__wrap-item">
                         <form action="" class="membership-form page-form">
                             <div class="form__input-wrap">
@@ -389,9 +400,9 @@
     function initialize(setMap) {
         var mapOptions;
 
-        if(setMap == "mapLondon") {
+        if (setMap == "mapLondon") {
             mapOptions = {
-                center: new google.maps.LatLng(51.4986949,-0.1661169),
+                center: new google.maps.LatLng(51.4986949, -0.1661169),
                 zoom: 13,
                 mapTypeControlOptions: {
                     mapTypeIds: ['roadmap', 'styled_map']
@@ -570,7 +581,7 @@
 
         } else {
             mapOptions = {
-                center: new google.maps.LatLng(22.192865,113.5396),
+                center: new google.maps.LatLng(22.192865, 113.5396),
                 zoom: 13,
                 mapTypeControlOptions: {
                     mapTypeIds: ['roadmap', 'styled_map']
@@ -749,17 +760,19 @@
         }
         displayMarkers(setMap);
 
-        if(setMap == "mapLondon"){
+        if (setMap == "mapLondon") {
             initialize("mapMacau");
         }
-        google.maps.event.addDomListener(window, 'load', function(){ initialize("mapLondon") });
+        google.maps.event.addDomListener(window, 'load', function () {
+            initialize("mapLondon")
+        });
     }
 
-    function displayMarkers(setMap){
+    function displayMarkers(setMap) {
         var markersData;
         var map;
 
-        if(setMap == "mapLondon"){
+        if (setMap == "mapLondon") {
             markersData = markersDataLondon;
             map = mapLondon;
         } else {
@@ -769,7 +782,7 @@
 
         var bounds = new google.maps.LatLngBounds();
 
-        for (var i = 0; i < markersData.length; i++){
+        for (var i = 0; i < markersData.length; i++) {
 
             var latlng = new google.maps.LatLng(markersData[i].lat, markersData[i].lng);
 
