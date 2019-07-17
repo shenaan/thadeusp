@@ -2426,6 +2426,15 @@ img[data-srcset] {
   min-height: 100px !important; }
   .fullpage.contact .page-section__footer .fp-tableCell {
     height: auto !important; }
+.fullpage .fp-slides {
+  overflow: visible !important;
+  width: 100% !important; }
+.fullpage .fp-slidesContainer {
+  width: 100% !important; }
+.fullpage .slide {
+  width: 100% !important; }
+.fullpage .fp-controlArrow {
+  display: none; }
 @media screen and (max-width: 992px) {
   .fullpage {
     height: auto !important;
@@ -2444,6 +2453,9 @@ img[data-srcset] {
         min-height: 640px !important; }
       .fullpage .section.services-lifestyle {
         height: 100vh !important; } }
+@media screen and (min-width: 992px) {
+  .fullpage .slide {
+    width: 50% !important; } }
 
 /*------------Slick Slider----------------*/
 .slick__slider {

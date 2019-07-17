@@ -12,6 +12,20 @@
     }
   }
 
+  .fp-slides{
+    overflow: visible !important;
+    width: 100% !important;
+  }
+  .fp-slidesContainer{
+    width: 100% !important;
+  }
+  .slide{
+    width: 100% !important;
+  }
+  .fp-controlArrow{
+    display: none;
+  }
+
   @include respond-max(992) {
     height: auto !important;
     @include display-flex();
@@ -27,6 +41,11 @@
       &.services-lifestyle{
         height: 100vh !important;
       }
+    }
+  }
+  @include respond-min(992){
+    .slide{
+      width: 50% !important;
     }
   }
 }
