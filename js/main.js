@@ -31,7 +31,8 @@ $(document).ready(function () {
         fixedElements: '.header',
         css3: true,
         scrollBar: true,
-        verticalCentered: false
+        verticalCentered: false,
+        lockAnchors: true
     });
 
     function handleFullPage() {

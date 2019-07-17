@@ -51,6 +51,35 @@ $(document).ready(function () {
         }
     }
 
+    // function serviceTextAnimation() {
+    //     if (isMobile()) {
+    //         $('.services-section__locked').removeClass('page-section__col-fixed')
+    //     } else {
+    //         $('.services-section__locked').each(function (i, el) {
+    //             var $this = $(this),
+    //                 text = $this.find('.page-section__col-text'),
+    //                 height = $this.outerHeight();
+    //
+    //             var servicesScene = new ScrollMagic.Scene({
+    //                 triggerElement: this,
+    //                 offset: 0,
+    //                 triggerHook: 0.5,
+    //                 reverse: true,
+    //                 duration: height * 2
+    //             })
+    //                 .on('enter', function () {
+    //                     new TweenMax.staggerFromTo(text, 0.7, {opacity: 0}, {opacity: 1}, 0.2);
+    //                     text.addClass('page-section__col-fixed');
+    //                 })
+    //                 .on('leave', function () {
+    //                     text.removeClass('page-section__col-fixed');
+    //                 })
+    //                 .addIndicators()
+    //                 .addTo(controller);
+    //         })
+    //     }
+    // }
+
     function serviceTextAnimation() {
         if (isMobile()) {
             $('.services-section__locked').removeClass('page-section__col-fixed')
@@ -58,7 +87,11 @@ $(document).ready(function () {
             $('.services-section__locked').each(function (i, el) {
                 var $this = $(this),
                     text = $this.find('.page-section__col-text'),
-                    height = $this.outerHeight();
+                    height = $this.outerHeight(),
+                    $thisTop = $this.offset().top,
+                    $thisBottom = $this.offset().top + $this.outerHeight(),
+                    w = $(window),
+                    scrollTop = w.scrollTop();
 
                 var servicesScene = new ScrollMagic.Scene({
                     triggerElement: this,
@@ -79,6 +112,7 @@ $(document).ready(function () {
             })
         }
     }
+
 
 // services hero animation
 
@@ -141,9 +175,11 @@ $(document).ready(function () {
             w = $(window),
             scrollTop = w.scrollTop();
         if (scrollTop >= (sectionFixedTop - 10) && scrollTop < sectionFixedBottom) {
+            console.log('enter lifestyle');
             lifestyleScrollRemove(sectionFixed, sectionFixedTop);
             $('.header').addClass('header--white');
         } else {
+            console.log('leave lifestyle');
             $('.header').removeClass('header--white');
         }
     }
