@@ -940,6 +940,16 @@ p {
     -o-transition: 0.4s all ease;
     transition: 0.4s all ease; }
 
+.page-wrapper {
+  -webkit-transition: 0.8s all ease;
+  -o-transition: 0.8s all ease;
+  transition: 0.8s all ease; }
+  .page-wrapper.scene__element--fadein {
+    opacity: 0;
+    -webkit-transition: 0.8s all ease;
+    -o-transition: 0.8s all ease;
+    transition: 0.8s all ease; }
+
 .main-container {
   max-width: 100%;
   padding: 0 15px;

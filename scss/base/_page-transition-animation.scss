@@ -23,3 +23,11 @@
     @include transition(0.4s all ease);
   }
 }
+
+.page-wrapper{
+  @include transition(0.8s all ease);
+  &.scene__element--fadein {
+    opacity: 0;
+    @include transition(0.8s all ease);
+  }
+}
