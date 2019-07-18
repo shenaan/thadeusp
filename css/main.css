@@ -2477,7 +2477,10 @@ img[data-srcset] {
 
 /*------------Slick Slider----------------*/
 .slick__slider {
-  position: relative; }
+  position: relative;
+  opacity: 0; }
+  .slick__slider.slick-initialized {
+    opacity: 1; }
 
 .slick-slide {
   outline: none !important; }
