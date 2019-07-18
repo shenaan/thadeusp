@@ -101,7 +101,7 @@ $(document).ready(function () {
                     duration: height * 2
                 })
                     .on('enter', function () {
-                        new TweenMax.staggerFromTo(text, 0.7, {opacity: 0}, {opacity: 1}, 0.2);
+                        // new TweenMax.staggerFromTo(text, 0.7, {opacity: 0}, {opacity: 1}, 0.2);
                         text.addClass('page-section__col-fixed');
                     })
                     .on('leave', function () {
@@ -129,6 +129,26 @@ $(document).ready(function () {
         tl.staggerTo(heroDefault, 1, {opacity: 0, zIndex: '-1'}, 1, "hero-img")
             .staggerFromTo(arrow, 0.5, {opacity: 0}, {opacity: 1}, 0.3, 'arrows')
             .staggerFromTo(link, 0.5, {opacity: 0}, {opacity: 1}, 0.3, 'arrows');
+    }
+
+
+    function lifeStyleAnimation(){
+        var tlFixed = new TimelineMax({
+                repeat: 0,
+                ease: Back.easeOut.config(1.7)
+            }),
+            h1 = $('.services-lifestyle__content--default .h1'),
+            h3 = $('.services-lifestyle__content--default h3'),
+            contentActive = $('.services-lifestyle__content--active'),
+            icon = $('.services-lifestyle__title-icon'),
+            color = '#1d1e1c';
+
+        tlFixed
+            .staggerTo(h1, 1, {color: color}, 1, "content-title")
+            .staggerTo(h3, 1, {color: color}, 1, "content-title")
+            .staggerTo(icon, 1, {fill: color}, 1, "content-title")
+            .staggerTo(contentActive, 1, {opacity: 1, scaleX: 1}, 0.3, 'arrows');
+
     }
 
     // setTimeout(servicesLoadAnimation, 800);
@@ -163,7 +183,6 @@ $(document).ready(function () {
     function lifestyleScrollRemove(sectionFixed, sectionFixedTop) {
         if (sectionFixed.hasClass('services-section--fixed')) {
             controller.scrollTo(sectionFixedTop);
-            $('body, html').addClass('no-scroll-initial');
             $.fn.fullpage.setAllowScrolling(false);
         }
     }
@@ -175,38 +194,46 @@ $(document).ready(function () {
             w = $(window),
             scrollTop = w.scrollTop();
         if (scrollTop >= (sectionFixedTop - 10) && scrollTop < sectionFixedBottom) {
-            console.log('enter lifestyle');
-            lifestyleScrollRemove(sectionFixed, sectionFixedTop);
+
             $('.header').addClass('header--white');
+
+            if(sectionFixed.hasClass('services-section--fixed')){
+                lifestyleScrollRemove(sectionFixed, sectionFixedTop);
+
+                setTimeout(function () {
+                    lifeStyleAnimation();
+                    $.fn.fullpage.setAllowScrolling(true);
+                    $('.services-lifestyle').removeClass('services-section--fixed');
+                }, 800)
+            }
         } else {
-            console.log('leave lifestyle');
             $('.header').removeClass('header--white');
         }
     }
 
-    $(document).on('click', '.services-section--fixed', function () {
-        setTimeout(function () {
-            var tlFixed = new TimelineMax({
-                    repeat: 0,
-                    ease: Back.easeOut.config(1.7)
-                }),
-                h1 = $('.services-lifestyle__content--default .h1'),
-                h3 = $('.services-lifestyle__content--default h3'),
-                contentActive = $('.services-lifestyle__content--active'),
-                icon = $('.services-lifestyle__title-icon'),
-                color = '#1d1e1c';
-
-            tlFixed
-                .staggerTo(h1, 1, {color: color}, 1, "content-title")
-                .staggerTo(h3, 1, {color: color}, 1, "content-title")
-                .staggerTo(icon, 1, {fill: color}, 1, "content-title")
-                .staggerTo(contentActive, 1, {opacity: 1, scaleX: 1}, 0.3, 'arrows');
-
-            $.fn.fullpage.setAllowScrolling(true);
-            $('.services-lifestyle').removeClass('services-section--fixed');
-            $('body, html').removeClass('no-scroll-initial');
-        }, 500)
-    });
+    // $(document).on('click', '.services-section--fixed', function () {
+    //     setTimeout(function () {
+    //         var tlFixed = new TimelineMax({
+    //                 repeat: 0,
+    //                 ease: Back.easeOut.config(1.7)
+    //             }),
+    //             h1 = $('.services-lifestyle__content--default .h1'),
+    //             h3 = $('.services-lifestyle__content--default h3'),
+    //             contentActive = $('.services-lifestyle__content--active'),
+    //             icon = $('.services-lifestyle__title-icon'),
+    //             color = '#1d1e1c';
+    //
+    //         tlFixed
+    //             .staggerTo(h1, 1, {color: color}, 1, "content-title")
+    //             .staggerTo(h3, 1, {color: color}, 1, "content-title")
+    //             .staggerTo(icon, 1, {fill: color}, 1, "content-title")
+    //             .staggerTo(contentActive, 1, {opacity: 1, scaleX: 1}, 0.3, 'arrows');
+    //
+    //         $.fn.fullpage.setAllowScrolling(true);
+    //         $('.services-lifestyle').removeClass('services-section--fixed');
+    //         // $('body, html').removeClass('no-scroll-initial');
+    //     }, 500)
+    // });
 
     serviceTextAnimation();
     fixedSectionHandle();
