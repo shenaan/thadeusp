@@ -266,8 +266,10 @@ $(document).ready(function () {
     function handleFullPage() {
         if (isMobile()) {
             $.fn.fullpage.setResponsive(true);
+            $.fn.fullpage.setAllowScrolling(false);
         } else {
             $.fn.fullpage.setResponsive(false);
+            $.fn.fullpage.setAllowScrolling(true);
         }
     }
 
