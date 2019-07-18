@@ -922,6 +922,24 @@ p {
   -webkit-filter: blur(10px) grayscale(1) contrast(0.85);
   filter: blur(10px) grayscale(1) contrast(0.85); }
 
+.main__scene {
+  transition: 0.7s all ease;
+  /** An element that fades in */ }
+  .main__scene.is-exiting .scene_element {
+    animation-direction: alternate-reverse; }
+  .main__scene .scene__element {
+    -webkit-animation-duration: 1;
+    animation-duration: 1;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in; }
+  .main__scene.scene__element--fadein {
+    opacity: 0;
+    -webkit-transition: 0.4s all ease;
+    -o-transition: 0.4s all ease;
+    transition: 0.4s all ease; }
+
 .main-container {
   max-width: 100%;
   padding: 0 15px;
@@ -3669,7 +3687,8 @@ img[data-srcset] {
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  z-index: 5; }
 
 .services-section--fixed {
   cursor: pointer; }
