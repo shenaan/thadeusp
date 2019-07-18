@@ -116,7 +116,14 @@ $(document).ready(function () {
         e.preventDefault();
         var href = $(this).attr('href');
 
+        $('.page-wrapper').addClass('scene__element--fadein');
+
         controller.scrollTo(href);
+        setTimeout(function () {
+            $('.page-wrapper').removeClass('scene__element--fadein');
+            },100
+        )
+
     });
 
     function stockSliderInit() {
@@ -376,7 +383,7 @@ $(document).ready(function () {
 
 $(window).on('load', function () {
     $('.page-wrapper').removeClass('scene__element--fadein')
-})
+});
 
 
 // (function ($) {
