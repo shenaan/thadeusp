@@ -266,10 +266,10 @@ $(document).ready(function () {
     function handleFullPage() {
         if (isMobile()) {
             $.fn.fullpage.setResponsive(true);
-            $.fn.fullpage.setAllowScrolling(false);
+            $.fn.fullpage.setAutoScrolling(false);
         } else {
             $.fn.fullpage.setResponsive(false);
-            $.fn.fullpage.setAllowScrolling(true);
+            $.fn.fullpage.setAutoScrolling(true);
         }
     }
 
@@ -497,7 +497,7 @@ $(document).ready(function () {
             // $.fn.fullpage.reBuild();
             // $('#fullpage').fullpage(fullpageOptions);
 
-            // handleFullPage();
+            handleFullPage();
 
             // $.fn.fullpage.rebuild()
             //
