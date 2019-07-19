@@ -21,6 +21,12 @@ $(document).ready(function () {
         });
     });
 
+    $.fn.fullpage.setAllowScrolling(false);
+
+    setTimeout(function () {
+        $.fn.fullpage.setAllowScrolling(true);
+    }, 1000);
+
     imgSlider = $('.services-img__slider');
     imgSliderSettings = {
         dots: false,
@@ -51,35 +57,6 @@ $(document).ready(function () {
         }
     }
 
-    // function serviceTextAnimation() {
-    //     if (isMobile()) {
-    //         $('.services-section__locked').removeClass('page-section__col-fixed')
-    //     } else {
-    //         $('.services-section__locked').each(function (i, el) {
-    //             var $this = $(this),
-    //                 text = $this.find('.page-section__col-text'),
-    //                 height = $this.outerHeight();
-    //
-    //             var servicesScene = new ScrollMagic.Scene({
-    //                 triggerElement: this,
-    //                 offset: 0,
-    //                 triggerHook: 0.5,
-    //                 reverse: true,
-    //                 duration: height * 2
-    //             })
-    //                 .on('enter', function () {
-    //                     new TweenMax.staggerFromTo(text, 0.7, {opacity: 0}, {opacity: 1}, 0.2);
-    //                     text.addClass('page-section__col-fixed');
-    //                 })
-    //                 .on('leave', function () {
-    //                     text.removeClass('page-section__col-fixed');
-    //                 })
-    //                 .addIndicators()
-    //                 .addTo(controller);
-    //         })
-    //     }
-    // }
-
     function serviceTextAnimation() {
         if (isMobile()) {
             $('.services-section__locked').removeClass('page-section__col-fixed')
@@ -87,11 +64,7 @@ $(document).ready(function () {
             $('.services-section__locked').each(function (i, el) {
                 var $this = $(this),
                     text = $this.find('.page-section__col-text'),
-                    height = $this.outerHeight(),
-                    $thisTop = $this.offset().top,
-                    $thisBottom = $this.offset().top + $this.outerHeight(),
-                    w = $(window),
-                    scrollTop = w.scrollTop();
+                    height = $this.outerHeight();
 
                 var servicesScene = new ScrollMagic.Scene({
                     triggerElement: this,
@@ -113,9 +86,7 @@ $(document).ready(function () {
         }
     }
 
-
 // services hero animation
-
     function servicesLoadAnimation() {
 
         var tl = new TimelineMax({
@@ -131,8 +102,22 @@ $(document).ready(function () {
             .staggerFromTo(link, 0.5, {opacity: 0}, {opacity: 1}, 0.3, 'arrows');
     }
 
+    heroServicesScene = new ScrollMagic.Scene({
+        triggerElement: $('.services__hero-active'),
+        duration: '100%',
+        reverse: false,
+        offset: 0,
+        triggerHook: 0
+    })
+        .on('enter', function () {
+            setTimeout(function () {
+                servicesLoadAnimation();
+            }, 800);
+        })
+        .addTo(controller);
 
-    function lifeStyleAnimation(){
+    //lifestyle section animation
+    function lifeStyleAnimation() {
         var tlFixed = new TimelineMax({
                 repeat: 0,
                 ease: Back.easeOut.config(1.7)
@@ -151,39 +136,15 @@ $(document).ready(function () {
 
     }
 
-    // setTimeout(servicesLoadAnimation, 800);
-
-    heroServicesScene = new ScrollMagic.Scene({
-        triggerElement: $('.services__hero-active'),
-        duration: '100%',
-        reverse: false,
-        offset: 0,
-        triggerHook: 0
-    })
-        .on('enter', function () {
-            setTimeout(servicesLoadAnimation, 800);
-            // homepageLoadAnimation()
-        })
-        .addTo(controller);
-
-    // $(document).on('click', '.services__hero-default', function () {
-    //     setTimeout(function () {
-    //         servicesLoadAnimation();
-    //         $('body, html').removeClass('no-scroll is-loading');
-    //         $('body').addClass('has-loaded');
-    //         $.fn.fullpage.setAllowScrolling(true);
-    //         if (isMobile()) {
-    //             $.fn.fullpage.setAutoScrolling(false);
-    //         }
-    //     }, 500)
-    // });
-
-    //lifestyle section animation
-
     function lifestyleScrollRemove(sectionFixed, sectionFixedTop) {
         if (sectionFixed.hasClass('services-section--fixed')) {
             controller.scrollTo(sectionFixedTop);
             $.fn.fullpage.setAllowScrolling(false);
+
+            setTimeout(function () {
+                $.fn.fullpage.setAllowScrolling(true);
+                $('.services-lifestyle').removeClass('services-section--fixed');
+            }, 1000)
         }
     }
 
@@ -197,43 +158,14 @@ $(document).ready(function () {
 
             $('.header').addClass('header--white');
 
-            if(sectionFixed.hasClass('services-section--fixed')){
+            if (sectionFixed.hasClass('services-section--fixed')) {
+                lifeStyleAnimation();
                 lifestyleScrollRemove(sectionFixed, sectionFixedTop);
-
-                setTimeout(function () {
-                    lifeStyleAnimation();
-                    $.fn.fullpage.setAllowScrolling(true);
-                    $('.services-lifestyle').removeClass('services-section--fixed');
-                }, 800)
             }
         } else {
             $('.header').removeClass('header--white');
         }
     }
-
-    // $(document).on('click', '.services-section--fixed', function () {
-    //     setTimeout(function () {
-    //         var tlFixed = new TimelineMax({
-    //                 repeat: 0,
-    //                 ease: Back.easeOut.config(1.7)
-    //             }),
-    //             h1 = $('.services-lifestyle__content--default .h1'),
-    //             h3 = $('.services-lifestyle__content--default h3'),
-    //             contentActive = $('.services-lifestyle__content--active'),
-    //             icon = $('.services-lifestyle__title-icon'),
-    //             color = '#1d1e1c';
-    //
-    //         tlFixed
-    //             .staggerTo(h1, 1, {color: color}, 1, "content-title")
-    //             .staggerTo(h3, 1, {color: color}, 1, "content-title")
-    //             .staggerTo(icon, 1, {fill: color}, 1, "content-title")
-    //             .staggerTo(contentActive, 1, {opacity: 1, scaleX: 1}, 0.3, 'arrows');
-    //
-    //         $.fn.fullpage.setAllowScrolling(true);
-    //         $('.services-lifestyle').removeClass('services-section--fixed');
-    //         // $('body, html').removeClass('no-scroll-initial');
-    //     }, 500)
-    // });
 
     serviceTextAnimation();
     fixedSectionHandle();
