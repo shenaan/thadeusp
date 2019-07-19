@@ -1,5 +1,6 @@
 $(document).ready(function () {
     var $body, options, content;
+    var speed;
 
     var controller = new ScrollMagic.Controller();
 
@@ -23,9 +24,10 @@ $(document).ready(function () {
 
     //fullpage and body scroll
 
+    speed = 900;
     var fullpageOptions = ({
         licenseKey: 'B80EC24D-66D9477B-B16E7559-B4301A50',
-        scrollingSpeed: 900,
+        scrollingSpeed: speed,
         scrollHorizontally: false,
         scrollOverflow: false, //
         autoScrolling: false,
@@ -38,7 +40,7 @@ $(document).ready(function () {
         lockAnchors: true,
         animateAnchor: false
     });
-    
+
     $('#fullpage').fullpage(fullpageOptions);
 
     function handleFullPage() {
@@ -70,7 +72,11 @@ $(document).ready(function () {
 
     function handlePageMenuLink() {
         $('.page-menu__list-link').on('click', function (e) {
+            var href = $(this).attr('href');
             headerReset();
+            $.fn.fullpage.setScrollingSpeed(0);
+            $.fn.fullpage.moveTo(href);
+            $.fn.fullpage.setScrollingSpeed(speed);
         });
     }
 
