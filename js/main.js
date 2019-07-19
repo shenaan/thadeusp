@@ -30,6 +30,7 @@ $(document).ready(function () {
         scrollOverflow: false, //
         // autoScrolling: false,
         fitToSection: false,
+        fitToSectionDelay: 30000,
         fixedElements: '.header',
         css3: true,
         scrollBar: true,
