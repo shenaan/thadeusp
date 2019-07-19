@@ -2478,7 +2478,7 @@ img[data-srcset] {
       min-height: 100vh !important; }
       .fullpage .section.section__hero {
         height: 100vh !important;
-        min-height: 640px !important; }
+        min-height: 100vh !important; }
       .fullpage .section.services-lifestyle {
         height: 100vh !important; } }
 @media screen and (min-width: 992px) {
