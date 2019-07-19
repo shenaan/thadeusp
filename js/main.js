@@ -211,58 +211,58 @@ $(document).ready(function () {
     //Smooth page transitions
     //https://www.javascripting.com/view/smoothstate-js#built-with-smoothstatejs
 
-    // $body = $('html, body');
-    // options = {
-    //     debug: true,
-    //     anchors: '.page-transition__link',
-    //     repeatDelay: 0,
-    //     blacklist: '.no-smoothState',
-    //     onStart: {
-    //         duration: 800,
-    //         render: function ($container) {
-    //             $container.toggleClass('is-exiting').addClass('scene__element--fadein');
-    //             $('.page-wrapper').addClass('scene__element--fadein');
-    //             $('.main-scene').addClass('is-loading');
-    //         }
-    //     },
-    //     onProgress: {
-    //         duration: 400,
-    //         render: function ($container) {
-    //             // console.log('on progress')
-    //         }
-    //     },
-    //     onReady: {
-    //         duration: 400,
-    //         render: function ($container, $newContent) {
-    //             // Remove your CSS animation reversing class
-    //             // $container.removeClass('is-exiting scene__element--fadein');
-    //
-    //             location.reload();
-    //             $('.page-wrapper').addClass('scene__element--fadein');
-    //
-    //             // Inject the new content
-    //             $container.html($newContent);
-    //         }
-    //     },
-    //     onAfter: function ($container, $newContent) {
-    //         $container.removeClass('is-loading').addClass('has-loaded');
-    //
-    //         setTimeout(function () {
-    //             $('.page-wrapper').removeClass('scene__element--fadein')
-    //         },200);
-    //
-    //         headerReset();
-    //         // handleFullPage();
-    //         handlePageMenu();
-    //         handlePageMenuLink();
-    //         menuClosing();
-    //         handleScroll();
-    //         printTime();
-    //         setInterval(printTime, 1000);
-    //     }
-    // };
-    //
-    // content = $('#main__scene').smoothState(options).data('smoothState');
+    $body = $('html, body');
+    options = {
+        debug: true,
+        anchors: '.page-transition__link',
+        repeatDelay: 0,
+        blacklist: '.no-smoothState',
+        onStart: {
+            duration: 800,
+            render: function ($container) {
+                $container.toggleClass('is-exiting').addClass('scene__element--fadein');
+                $('.page-wrapper').addClass('scene__element--fadein');
+                $('.main-scene').addClass('is-loading');
+            }
+        },
+        onProgress: {
+            duration: 400,
+            render: function ($container) {
+                // console.log('on progress')
+            }
+        },
+        onReady: {
+            duration: 400,
+            render: function ($container, $newContent) {
+                // Remove your CSS animation reversing class
+                // $container.removeClass('is-exiting scene__element--fadein');
+
+                location.reload();
+                $('.page-wrapper').addClass('scene__element--fadein');
+
+                // Inject the new content
+                $container.html($newContent);
+            }
+        },
+        onAfter: function ($container, $newContent) {
+            $container.removeClass('is-loading').addClass('has-loaded');
+
+            setTimeout(function () {
+                $('.page-wrapper').removeClass('scene__element--fadein')
+            },200);
+
+            headerReset();
+            // handleFullPage();
+            handlePageMenu();
+            handlePageMenuLink();
+            menuClosing();
+            handleScroll();
+            printTime();
+            setInterval(printTime, 1000);
+        }
+    };
+
+    content = $('#main__scene').smoothState(options).data('smoothState');
 
     handlePageMenu();
     printTime();
