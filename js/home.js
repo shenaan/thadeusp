@@ -81,6 +81,9 @@ $(document).ready(function () {
         })
         .addTo(controller);
 
+    setTimeout(function () {
+        $('#modal__interest').addClass('is-active');
+    }, 8000);
     $(window).resize(function () {
 
     });

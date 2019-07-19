@@ -171,6 +171,10 @@ $(document).ready(function () {
     fixedSectionHandle();
     imgSliderInit();
 
+    setTimeout(function () {
+        $('#modal__interest').addClass('is-active');
+    }, 9000);
+
     $(window).scroll(function () {
         fixedSectionHandle();
     });
