@@ -15,10 +15,6 @@
   }
 }
 
-//.section__hero-default {
-//  cursor: pointer;
-//}
-
 .hero__bg {
   -webkit-background-size: cover;
   background-size: cover;
@@ -129,7 +125,7 @@
   text-align: center;
   width: 100%;
   z-index: -1;
-  @include transform-scale(0.8, 1);
+  //@include transform-scale(0.8, 1);
 
   h5 {
     color: inherit;
