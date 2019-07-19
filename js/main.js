@@ -29,7 +29,7 @@ $(document).ready(function () {
         scrollHorizontally: false,
         scrollOverflow: false, //
         // autoScrolling: false,
-        fitToSection: true,
+        fitToSection: false,
         fixedElements: '.header',
         css3: true,
         scrollBar: true,
