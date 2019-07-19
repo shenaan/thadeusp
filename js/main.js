@@ -36,12 +36,10 @@ $(document).ready(function () {
         scrollBar: true,
         verticalCentered: false,
         lockAnchors: true,
-        animateAnchor: true
+        animateAnchor: false
     });
-
-
+    
     $('#fullpage').fullpage(fullpageOptions);
-
 
     function handleFullPage() {
         if (isMobile()) {
@@ -50,12 +48,6 @@ $(document).ready(function () {
         } else {
             $.fn.fullpage.setResponsive(false);
             $.fn.fullpage.setAutoScrolling(true);
-        }
-    }
-
-    function bodyScroll() {
-        if ($('body').hasClass('is-loading')) {
-            $.fn.fullpage.setAllowScrolling(false)
         }
     }
 
@@ -232,7 +224,7 @@ $(document).ready(function () {
             }
         },
         onReady: {
-            duration: 400,
+            duration: 0,
             render: function ($container, $newContent) {
                 // Remove your CSS animation reversing class
                 // $container.removeClass('is-exiting scene__element--fadein');
