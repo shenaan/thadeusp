@@ -274,6 +274,10 @@ $(document).ready(function () {
     membershipFormSubmit();
     stockSliderInit();
 
+    setTimeout(function () {
+        $('#modal__interest').addClass('is-active');
+    }, 7000);
+
     $(window).resize(function () {
         headerReset();
         handleFullPage();
