@@ -22,17 +22,15 @@ $(document).ready(function () {
         });
     });
 
-    //fullpage and body scroll
-
+    //fullpage
     speed = 900;
     var fullpageOptions = ({
         licenseKey: 'B80EC24D-66D9477B-B16E7559-B4301A50',
         scrollingSpeed: speed,
         scrollHorizontally: false,
         scrollOverflow: false, //
-        autoScrolling: false,
+        autoScrolling: true,
         fitToSection: false,
-        // fitToSectionDelay: 50000,
         fixedElements: '.header',
         css3: true,
         scrollBar: true,
@@ -46,7 +44,7 @@ $(document).ready(function () {
     function handleFullPage() {
         if (isMobile()) {
             $.fn.fullpage.setResponsive(true);
-            // $.fn.fullpage.setAutoScrolling(false);
+            $.fn.fullpage.setAutoScrolling(false);
         } else {
             $.fn.fullpage.setResponsive(false);
             $.fn.fullpage.setAutoScrolling(true);
@@ -90,21 +88,6 @@ $(document).ready(function () {
             }
         });
     }
-
-    $('.page-nav__list-link').on('click', headerReset);
-
-    $('.menu-scroll__link').on('click',function (e) {
-        e.preventDefault();
-        var href = $(this).attr('href');
-
-        $('.page-wrapper').addClass('scene__element--fadein');
-
-        controller.scrollTo(href);
-        setTimeout(function () {
-            $('.page-wrapper').removeClass('scene__element--fadein');
-            },100
-        )
-    });
 
     function stockSliderInit() {
         $('.header-stock__slider').slick({
@@ -216,7 +199,7 @@ $(document).ready(function () {
         repeatDelay: 0,
         blacklist: '.no-smoothState',
         onStart: {
-            duration: 800,
+            duration: 400,
             render: function ($container) {
                 $container.toggleClass('is-exiting').addClass('scene__element--fadein');
                 $('.page-wrapper').addClass('scene__element--fadein');
@@ -224,7 +207,7 @@ $(document).ready(function () {
             }
         },
         onProgress: {
-            duration: 400,
+            duration: 0,
             render: function ($container) {
                 // console.log('on progress')
             }
@@ -247,7 +230,7 @@ $(document).ready(function () {
 
             setTimeout(function () {
                 $('.page-wrapper').removeClass('scene__element--fadein')
-            },200);
+            },100);
 
             headerReset();
             // handleFullPage();

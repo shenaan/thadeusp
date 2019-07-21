@@ -1,3 +1,18 @@
+// services hero animation
+function servicesLoadAnimation() {
+    var tl = new TimelineMax({
+            repeat: 0,
+            // ease: Back.easeOut.config(1.7)
+        }),
+        heroDefault = $('.services__hero-default'),
+        arrow = $('.services__hero-active .page-scroll__link'),
+        link = $('.services__hero-active .page__link--green');
+
+    tl.staggerTo(heroDefault, 1, {opacity: 0, zIndex: '-1'}, 1, "hero-img")
+        .staggerFromTo(arrow, 0.5, {opacity: 0}, {opacity: 1}, 0.3, 'arrows')
+        .staggerFromTo(link, 0.5, {opacity: 0}, {opacity: 1}, 0.3, 'arrows');
+}
+
 $(document).ready(function () {
     var controller = new ScrollMagic.Controller();
     var imgSlider, imgSliderSettings;
@@ -21,11 +36,11 @@ $(document).ready(function () {
         });
     });
 
-    $.fn.fullpage.setAllowScrolling(false);
-
-    setTimeout(function () {
-        $.fn.fullpage.setAllowScrolling(true);
-    }, 1000);
+    // $.fn.fullpage.setAllowScrolling(false);
+    //
+    // setTimeout(function () {
+    //     $.fn.fullpage.setAllowScrolling(true);
+    // }, 1000);
 
     imgSlider = $('.services-img__slider');
     imgSliderSettings = {
@@ -86,22 +101,6 @@ $(document).ready(function () {
         }
     }
 
-// services hero animation
-    function servicesLoadAnimation() {
-
-        var tl = new TimelineMax({
-                repeat: 0,
-                // ease: Back.easeOut.config(1.7)
-            }),
-            heroDefault = $('.services__hero-default'),
-            arrow = $('.services__hero-active .page-scroll__link'),
-            link = $('.services__hero-active .page__link--green');
-
-        tl.staggerTo(heroDefault, 1, {opacity: 0, zIndex: '-1'}, 1, "hero-img")
-            .staggerFromTo(arrow, 0.5, {opacity: 0}, {opacity: 1}, 0.3, 'arrows')
-            .staggerFromTo(link, 0.5, {opacity: 0}, {opacity: 1}, 0.3, 'arrows');
-    }
-
     heroServicesScene = new ScrollMagic.Scene({
         triggerElement: $('.services__hero-active'),
         duration: '100%',
@@ -110,9 +109,9 @@ $(document).ready(function () {
         triggerHook: 0
     })
         .on('enter', function () {
-            setTimeout(function () {
-                servicesLoadAnimation();
-            }, 800);
+            // setTimeout(function () {
+            //     servicesLoadAnimation();
+            // }, 800);
         })
         .addTo(controller);
 
@@ -171,10 +170,6 @@ $(document).ready(function () {
     fixedSectionHandle();
     imgSliderInit();
 
-    setTimeout(function () {
-        $('#modal__interest').addClass('is-active');
-    }, 9000);
-
     $(window).scroll(function () {
         fixedSectionHandle();
     });
@@ -184,4 +179,10 @@ $(document).ready(function () {
         imgSliderInit();
     });
 
+});
+
+$(window).on('load', function () {
+    setTimeout(function () {
+        servicesLoadAnimation();
+    }, 800);
 });

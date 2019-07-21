@@ -1,3 +1,20 @@
+//homepage load animation
+function homepageLoadAnimation(){
+    var tl = new TimelineMax({
+            repeat: 0,
+            // ease: Back.easeOut.config(1.7)
+        }),
+        imgDefault = $('.hero__default'),
+        imgActive = $('.hero__active'),
+        contentDefault = $('.hero__inner-content--default'),
+        contentActive = $('.hero__inner-content--active');
+
+    tl.staggerTo(imgDefault, 1, {opacity: 0, zIndex: '-1'}, 1, "hero-img")
+        .staggerTo(imgActive, 1, {zIndex: '1', opacity: 1}, 1, "hero-img")
+        .staggerFromTo(contentDefault, 0.5, {opacity: 1, zIndex: '1'}, {opacity: 0, zIndex: '-1'}, 0.4, '-=0.4')
+        .fromTo(contentActive, 0.5, {opacity: 0, zIndex: '1'}, {opacity: 1, zIndex: '1'})
+}
+
 $(document).ready(function () {
     var controller = new ScrollMagic.Controller();
     var heroScene;
@@ -20,11 +37,11 @@ $(document).ready(function () {
         });
     });
 
-    $.fn.fullpage.setAllowScrolling(false);
-
-    setTimeout(function () {
-        $.fn.fullpage.setAllowScrolling(true);
-    }, 1700);
+    // $.fn.fullpage.setAllowScrolling(false);
+    //
+    // setTimeout(function () {
+    //     $.fn.fullpage.setAllowScrolling(true);
+    // }, 1700);
 
     //homepage instagram slider
     $('.homepage-follow__slider').slick({
@@ -52,23 +69,6 @@ $(document).ready(function () {
         ]
     });
 
-    //homepage load animation
-    function homepageLoadAnimation(){
-        var tl = new TimelineMax({
-                repeat: 0,
-                // ease: Back.easeOut.config(1.7)
-            }),
-            imgDefault = $('.hero__default'),
-            imgActive = $('.hero__active'),
-            contentDefault = $('.hero__inner-content--default'),
-            contentActive = $('.hero__inner-content--active');
-
-        tl.staggerTo(imgDefault, 1, {opacity: 0, zIndex: '-1'}, 1, "hero-img")
-            .staggerTo(imgActive, 1, {zIndex: '1', opacity: 1}, 1, "hero-img")
-            .staggerFromTo(contentDefault, 0.5, {opacity: 1, zIndex: '1'}, {opacity: 0, zIndex: '-1'}, 0.4, '-=0.4')
-            .to(contentActive, 1, {opacity: 1, zIndex: '1', scaleX: 1})
-    }
-
     heroScene = new ScrollMagic.Scene({
         triggerElement: $('.section__hero-default'),
         duration: '100%',
@@ -81,10 +81,17 @@ $(document).ready(function () {
         })
         .addTo(controller);
 
-    setTimeout(function () {
-        $('#modal__interest').addClass('is-active');
-    }, 8000);
+    // setTimeout(function () {
+    //     $('#modal__interest').addClass('is-active');
+    // }, 10000);
     $(window).resize(function () {
 
     });
+});
+
+
+$(window).on('load', function () {
+    setTimeout(function () {
+        homepageLoadAnimation();
+    }, 800);
 });
