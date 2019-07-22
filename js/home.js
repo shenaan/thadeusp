@@ -16,32 +16,8 @@ function homepageLoadAnimation(){
 }
 
 $(document).ready(function () {
-    var controller = new ScrollMagic.Controller();
-    var heroScene;
 
-    function isMobile() {
-        if ($('.is-mobile').css('display') === 'block') {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    controller.scrollTo(function (target) {
-        TweenMax.to(window, 0.7, {
-            scrollTo: {
-                y: target,
-                autoKill: true
-            },
-            ease: Power2.easeOut
-        });
-    });
-
-    // $.fn.fullpage.setAllowScrolling(false);
-    //
-    // setTimeout(function () {
-    //     $.fn.fullpage.setAllowScrolling(true);
-    // }, 1700);
+    $.fn.fullpage.setAllowScrolling(false);
 
     //homepage instagram slider
     $('.homepage-follow__slider').slick({
@@ -69,29 +45,18 @@ $(document).ready(function () {
         ]
     });
 
-    heroScene = new ScrollMagic.Scene({
-        triggerElement: $('.section__hero-default'),
-        duration: '100%',
-        reverse: false,
-        offset: 0,
-        triggerHook: 0
-    })
-        .on('enter', function () {
-            setTimeout(homepageLoadAnimation, 800);
-        })
-        .addTo(controller);
-
-    // setTimeout(function () {
-    //     $('#modal__interest').addClass('is-active');
-    // }, 10000);
-    $(window).resize(function () {
-
-    });
+    setTimeout(function () {
+        $('#modal__interest').addClass('is-active');
+    }, 10000);
 });
-
 
 $(window).on('load', function () {
     setTimeout(function () {
         homepageLoadAnimation();
     }, 800);
+
+    setTimeout(function () {
+        $.fn.fullpage.setAllowScrolling(true);
+    }, 1700);
+
 });

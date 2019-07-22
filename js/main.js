@@ -202,7 +202,7 @@ $(document).ready(function () {
         repeatDelay: 0,
         blacklist: '.no-smoothState',
         onStart: {
-            duration: 200,
+            duration: 100,
             render: function ($container) {
                 $container.toggleClass('is-exiting').addClass('scene__element--fadein');
                 $('.page-wrapper').addClass('scene__element--fadein');
@@ -236,7 +236,6 @@ $(document).ready(function () {
             },100);
 
             headerReset();
-            // handleFullPage();
             handlePageMenu();
             handlePageMenuLink();
             menuClosing();
@@ -263,10 +262,6 @@ $(document).ready(function () {
     $(window).resize(function () {
         headerReset();
         handleFullPage();
-    });
-
-    $(window).on('scroll', function (e) {
-
     });
 
     $(window).on('orientationchange', function () {
