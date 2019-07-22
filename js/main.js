@@ -68,19 +68,18 @@ $(document).ready(function () {
         });
     }
 
-    // function handlePageMenuLink() {
-    //     $('.page-menu__list-link').on('click', function (e) {
-    //         e.preventDefault();
-    //         var href = $(this).attr('href');
-    //         headerReset();
-    //         // $.fn.fullpage.setScrollingSpeed(0);
-    //         $.fn.fullpage.setAutoScrolling(false);
-    //         $.fn.fullpage.moveTo(href);
-    //         // location.href = href;
-    //         // $.fn.fullpage.setScrollingSpeed(speed);
-    //         $.fn.fullpage.setAutoScrolling(true);
-    //     });
-    // }
+    function handlePageMenuLink() {
+        $('.page-menu__list-link').on('click', function (e) {
+            headerReset();
+            // e.preventDefault();
+            // var href = $(this).attr('href');
+            // $.fn.fullpage.setScrollingSpeed(0);
+            // $.fn.fullpage.setAutoScrolling(false);
+            // $.fn.fullpage.moveTo(href);
+            // // $.fn.fullpage.setScrollingSpeed(speed);
+            // $.fn.fullpage.setAutoScrolling(true);
+        });
+    }
 
     function menuClosing() {
         $(document).on('click', function (e) {
@@ -203,7 +202,7 @@ $(document).ready(function () {
         repeatDelay: 0,
         blacklist: '.no-smoothState',
         onStart: {
-            duration: 400,
+            duration: 200,
             render: function ($container) {
                 $container.toggleClass('is-exiting').addClass('scene__element--fadein');
                 $('.page-wrapper').addClass('scene__element--fadein');
@@ -252,7 +251,7 @@ $(document).ready(function () {
     handlePageMenu();
     printTime();
     handleFullPage();
-    // handlePageMenuLink();
+    handlePageMenuLink();
     menuClosing();
     handleModal();
     handleModalSuccess();
